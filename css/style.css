@@ -252,8 +252,8 @@ body {
   a[data-toggle="modal"] {
     width: 50%;
   }
-  div.modal {
-    max-height: 80%;
+  .carousel-inner img {
+    max-height: 400px;
   }
 }
 
