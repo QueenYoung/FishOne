@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ch">
+
+<head>
+  <title>The Apologize</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse ">
+    <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbar">
+      <a href="#" class="navbar-brand my-auto">Fish One</a>
+      <ul class="navbar-nav mr-auto ml-3">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Introduction</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./reason.html">Reason</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./apologize.html">Apologize</a>
+        </li>
+      </ul>
+    </div>
+    <a href="#" data-toggle="modal" id="profile" data-target="#brief">
+      <img class="rounded-circle mr-2" width="40px" height="40px" src="img/logo.jpg" />
+    </a>
+  </nav>
+
+  <header class="jumbotron">
+    <h1 class="display-2">For You</h1>
+    <p class="lead">It's a website that helps me remember the only girl I like in university</p>
+    <hr class="jumbotron-hr" />
+    <p class="small text-muted">
+      Something is like a cloud of smoke but something will last forever.
+      <br>Hope you can remember me after graduation.
+    </p>
+    <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="tooltip"
+      data-placement="right" title="其实这个 Button 并没什么卵用">Let's Start</a>
+
+  </header>
+
+  <div class="modal fade" id="brief" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content card">
+        <header class="modal-header card-header">
+          <h5 class="modal-title">Profile</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </header>
+        <article class="card-block modal-body mx-4" style="font-family: 'My Font'">
+          <figure class="d-flex justify-content-center mb-2 figure">
+            <img class="rounded-circle figure-img" src="img/logo.jpg" width="88px" height="88px">
+          </figure>
+          <h4 class="card-title">About Her</h4>
+          <form>
+            <div class="row" style="margin-bottom: -20px">
+              <div class="form-group col">
+                <label>
+                  <small>Birthday</small>
+                  <p class="form-control-static">1998/1/6 🎂</p>
+                </label>
+              </div>
+
+              <div class="form-group col">
+                <label>
+                    <small>Symbolic Animal</small>
+                    <p class="form-control-static">Tiger 🐯</p>
+                  </label>
+              </div>
+
+              <div class="form-group col">
+                <label>
+                    <small>Constellation</small>
+                    <p class="form-control-static">Capricorn ♑️</p>
+                  </label>
+              </div>
+            </div>
+          </form>
+          <!--First Line End-->
+          <ul class="nav nav-tabs my-3 nav-justified">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#baseinformation">基本信息</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#schoolinformation">在校情况</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <form class="tab-pane active" id="baseinformation" role="tabpanel">
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">名字</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static">邱译莹</p>
+                </div>
+              </div>
+
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">昵称</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static">一一，小仙女</p>
+                </div>
+              </div>
+
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">地址</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static">江西赣州市章贡区</p>
+                </div>
+              </div>
+
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">喜欢的东西</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static">小狗狗，大狗狗，鱼，马云爸爸</p>
+                </div>
+              </div>
+
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">爱好</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static">舞蹈，运动，足球</p>
+                </div>
+              </div>
+
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">小目标</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static">环游世界</p>
+                </div>
+              </div>
+              <a class="card-link d-flex justify-content-end" href="mailto:c6swift@gmail.com"><small class="">Add More Information</small></a>
+            </form>
+            <!--first tab pane end-->
+            <form class="tab-pane" role="tabpanel" id="schoolinformation">
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">学校</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static">江西农业大学</p>
+                </div>
+              </div>
+
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">班级</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static">1611</p>
+                </div>
+              </div>
+
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">寝室</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static">4-419 South</p>
+                </div>
+              </div>
+
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">室友</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static">李文洁，邓韵丰，姜帅</p>
+                </div>
+              </div>
+
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">职务</label>
+                <div class="col-sm-9">
+                  <ul class="list-unstyled form-control-static">
+                    <li>团支书</li>
+                    <li>广播站音制部</li>
+                    <li>长跑组</li>
+                    <li>团委实践部</li>
+                  </ul>
+                </div>
+              </div>
+
+            </form>
+          </div>
+          <!--Tab content end-->
+        </article>
+        <!--Card Block and Modal Body End-->
+        <footer class="card-footer text-right">
+          <small class="text-muted mx-3">仅仅是我掌握的信息</small>
+        </footer>
+      </div>
+    </div>
+  </div>
+  <main class="container">
+    <article class="alert alert-warning mb-5">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      <h4 class="alert-heading">一些说明</h4>
+      <p class="mt-3">在未经本人同意的情况下，做一个有关她的网站，可能会让她更加反感。但你不去做，又怎知道绝望呢？
+         <br><del>不过因为自己能力还不够，会有点卡顿(╯°□°）╯︵ ┻━┻。</del>
+        <strong>那个头像可以点哦！</strong>
+      </p>
+    </article>
+    <section>
+      <h2 class="title">Three Selfies</h2>
+      <hr/>
+      <div class="card-deck mx-3">
+        <div class="card m-2">
+          <img class="card-img-top img-fluid" src="img/qyy5.jpg">
+          <section class="card-block">
+            <h4 class="card-title">2015</h4>
+            <p class="card-subtitle mb-2"><small>Summer</small></p>
+            <p class="card-text">很好看的写真，可是我好像除了说：<br/>
+              <mark>卧槽，很漂亮</mark>就不知道怎么形容咯。</p>
+            <hr/>
+          </section>
+          <footer class="card-footer">
+          </footer>
+        </div>
+        <div class="card m-2">
+          <img class="card-img-top img-fluid" src="img/qyy2.jpg">
+          <section class="card-block">
+            <h4 class="card-title">2016</h4>
+            <p class="card-subtitle mb-2"><small>Summer</small></p>
+            <p class="card-text">从微信上看到的，御姐范十足。而且黑白照片也显得逼格很高</p>
+            <hr/>
+          </section>
+          <footer class="card-footer">
+          </footer>
+        </div>
+        <div class="card m-2">
+          <img class="card-img-top img-fluid" src="img/qyy1.jpg">
+          <section class="card-block">
+            <h4 class="card-title">2016</h4>
+            <p class="card-subtitle mb-2"><small>Autumn</small></p>
+            <p class="card-text">个人最喜欢的一张。很想毕业后把它打印下来放进相册里。</p>
+            <hr/>
+          </section>
+          <footer class="card-footer">
+          </footer>
+        </div>
+      </div>
+    </section>
+
+    <section class="my-5">
+      <h2 class="title">Timeline</h2>
+      <hr/>
+      <section class="timeline container">
+        <div class="timeline-item">
+          <div class="timeline-img"></div>
+          <div class="card timeline-content">
+            <img class="card-img-top img-fluid" src="img/4.22.jpeg">
+            <span class="date">17/4/21</span>
+            <section class="card-block text-justify">
+              <p class="card-text">当志愿者真的很爽耶 当然 最后还是被恐龙吃掉了 啊！ </p>
+            </section>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-img"></div>
+          <div class="card timeline-content">
+            <img class="card-img-top img-fluid" src="img/1.6.jpeg">
+            <span class="date">17/1/6</span>
+            <section class="card-block text-justify">
+              <p class="card-text">感动到要命的一天 从陆续收到宝贝们寄来的礼物 到 凌晨我仙女们的祝福和一天的相伴 中午的聚餐 下午1611的大屏幕惊喜和尬舞环节
+                <br>晚上家人的陪伴 快乐 难忘 感激 喜欢把情感放在心里的我 真诚的说 我好喜欢 真的爱你们！我身边的人！ 好开心！好想每天都过生日啊！
+              </p>
+            </section>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-img"></div>
+          <div class="card timeline-content">
+            <img class="card-img-top img-fluid" src="img/12.26.jpeg">
+            <span class="date">2016/12/26</span>
+            <section class="card-block">
+              <p class="card-text">419 的小仙女收到的礼物</p>
+            </section>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-img"></div>
+          <div class="card timeline-content">
+            <img class="card-img-top img-fluid" src="img/12.17.jpeg">
+            <span class="date">2016/12/17</span>
+            <section class="card-block">
+              <p class="card-text">团日活动</p>
+            </section>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-img"></div>
+          <div class="card timeline-content">
+            <img class="card-img-top img-fluid" src="img/12.14.jpeg">
+            <span class="date">16/12/14</span>
+            <section class="card-block">
+              <p class="card-text">礼仪风采大赛</p>
+            </section>
+          </div>
+        </div>
+
+
+        <div class="timeline-item">
+          <div class="timeline-img"></div>
+          <div class="card timeline-content">
+            <img class="card-img-top img-fluid" src="img/12.11.jpeg">
+            <span class="date">2016/12/11</span>
+            <section class="card-block">
+              <p class="card-text">敬老院</p>
+            </section>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-img"></div>
+          <div class="card timeline-content">
+            <img class="card-img-top img-fluid" src="img/11.11.jpeg">
+            <span class="date">16/11/11</span>
+            <section class="card-block">
+              <p class="card-text">六只单身汪的光棍节</p>
+            </section>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-img"></div>
+          <div class="card timeline-content">
+            <img class="card-img-top img-fluid" src="img/10.29.jpeg">
+            <span class="date">2016/10/29</span>
+            <section class="card-block">
+              <p class="card-text">嘻嘻嘻嘻嘻</p>
+            </section>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-img"></div>
+          <div class="card timeline-content">
+            <img class="card-img-top img-fluid" src="img/10.5.jpeg">
+            <span class="date">2016/10/5</span>
+            <section class="card-block">
+              <h4 class="card-title">厦门N日游</h4>
+              <p class="card-text">长胖10000KG</p>
+            </section>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-img"></div>
+          <div class="card timeline-content">
+            <img class="card-img-top img-fluid" src="img/9.23.jpeg">
+            <span class="date">2016/9/23</span>
+            <section class="card-block">
+              <h4 class="card-title">十天军训结束</h4>
+              <p class="card-text text-justify">
+                和很多人的一样 它开始是令人抵制的 到最后是令人不舍的 每天晚上的小游戏都让陌生的群体更加团结 每一份用汗水 勇气换来的小奖励都更加值得珍惜
+                <br>一起拉歌 一起搞事情 一起保护小土豆儿 一些看起来十分幼稚的东西反而都让我们成长 担当 勇气 坚持 选择 记得不要被人潮淹没 要赢就赢那悠长的岁月</p>
+            </section>
+          </div>
+        </div>
+      </section>
+      <!--Timeline end-->
+
+      <footer class="d-flex justify-content-end mt-3">
+        <small class="text-muted">PS: 以上资源来自 QQ 空间</small>
+      </footer>
+    </section>
+
+    <section class="text-center">
+      <hr class="w-50">
+      <h1 class="title">The End</h1>
+      <hr class="w-50">
+    </section>
+
+  </main>
+
+
+  <script src="js/jquery-3.1.1.slim.min.js"></script>
+  <script src="js/tether.min.js"></script>
+  <!--<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script>
+  <script aysnc src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>-->
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+    $('[data-toggle="tooltip"]').tooltip();
+  </script>
+</body>
+
+</html>

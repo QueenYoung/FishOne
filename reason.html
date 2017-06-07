@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ch">
+
+<head>
+  <title>The Apologize</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-faded">
+  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+    <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a href="#" class="navbar-brand" data-toggle="modal" id="profile" data-target="#brief">
+      <img class="rounded-circle mr-2" width="40px" height="40px" src="img/logo.jpg" />
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="navbar-nav mr-auto ml-5">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">Introduction</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Reason</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./apologize.html">Apologize</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="modal fade" id="brief" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content card">
+        <header class="modal-header card-header">
+          <h5 class="modal-title">Profile</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </header>
+        <article class="card-block modal-body mx-4" style="font-family: 'My Font'">
+          <figure class="d-flex justify-content-center mb-2 figure"><img class="rounded-circle figure-img" src="img/logo.jpg" style="width: 88px"></figure>
+          <h4 class="card-title">About Her</h4>
+          <form>
+            <div class="row" style="margin-bottom: -20px">
+              <div class="form-group col">
+                <label>
+                  <small>Birthday</small>
+                  <p class="form-control-static">1998/1/6 🎂</p>
+                </label>
+              </div>
+
+              <div class="form-group col">
+                <label>
+                    <small>Symbolic Animal</small>
+                    <p class="form-control-static">Tiger 🐯</p>
+                  </label>
+              </div>
+
+              <div class="form-group col">
+                <label>
+                    <small>Constellation</small>
+                    <p class="form-control-static">Capricorn ♑️</p>
+                  </label>
+              </div>
+            </div>
+          </form>
+          <!--First Line End-->
+          <ul class="nav nav-tabs my-3 nav-justified">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#baseinformation">基本信息</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#schoolinformation">在校情况</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <form class="tab-pane active" id="baseinformation" role="tabpanel">
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">名字</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static">邱译莹</p>
+                </div>
+              </div>
+
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">昵称</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static">一一，小仙女</p>
+                </div>
+              </div>
+
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">地址</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static">江西赣州市章贡区</p>
+                </div>
+              </div>
+
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">喜欢的东西</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static">小狗狗，大狗狗，鱼，马云爸爸</p>
+                </div>
+              </div>
+
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">爱好</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static">舞蹈，运动，足球</p>
+                </div>
+              </div>
+
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">小目标</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static">环游世界</p>
+                </div>
+              </div>
+              <a class="card-link d-flex justify-content-end" href="mailto:c6swift@gmail.com"><small class="">Add More Information</small></a>
+            </form>
+            <!--first tab pane end-->
+            <form class="tab-pane" role="tabpanel" id="schoolinformation">
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">学校</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static">江西农业大学</p>
+                </div>
+              </div>
+
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">班级</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static">1611</p>
+                </div>
+              </div>
+
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">寝室</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static">4-419 South</p>
+                </div>
+              </div>
+
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">室友</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static">李文洁，邓韵丰，姜帅</p>
+                </div>
+              </div>
+
+              <div class="form group row">
+                <label class="col-sm-3 col-form-label text-muted">职务</label>
+                <div class="col-sm-9">
+                  <ul class="list-unstyled form-control-static">
+                    <li>团支书</li>
+                    <li>广播站音制部</li>
+                    <li>长跑组</li>
+                    <li>团委实践部</li>
+                  </ul>
+                </div>
+              </div>
+
+            </form>
+          </div>
+          <!--Tab content end-->
+        </article>
+        <!--Card Block and Modal Body End-->
+        <footer class="card-footer text-right">
+          <small class="text-muted mx-3">仅仅是我掌握的信息</small>
+        </footer>
+      </div>
+    </div>
+  </div>
+  <main class="container">
+    <sction>
+      <article>
+        <h2 class="title mt-5">Reason</h2>
+        <hr/>
+        <h4 class="lead font-weight-bold">那么到底是这个女孩的哪里吸引了你呢？</h4>
+        <ul class="list-group w-50">
+          <li class="list-group-item list-group-item-info">是我喜欢的样子</li>
+          <li class="list-group-item list-group-item-success">是一个有好奇心的女孩</li>
+          <li class="list-group-item list-group-item-warning">有看足球的潜质</li>
+          <li class="list-group-item list-group-item-danger">不怎么玩游戏</li>
+          <li class="list-group-item list-group-item-info">很有责任感，怎么都不逃课</li>
+        </ul>
+        <p class="text-muted my-2">
+          虽然她不总是能及时完成作业，我可能这辈子也找不到原因了，但是只要交了的话，质量还是蛮高的。 可是她电脑上的各种编程软件都是我帮她下载的, 这其实不是一个好事啊。<br>这在编程开始的阶段会非常有帮助，我担心，如果她之后如果不具备这种自己去发现优秀资源的能力的话……
+        </p>
+        <p class="text-muted my-2">
+          为什么，三句里离不开编程？我们能别谈编程吗？Alright，我如果不会编程的话，可能和她也八杆子联系不到一起去吧。
+          <br/>另外她每次生气的时候，总会说：<strong>如果是因为你喜欢我我才进工作室的话，我随时可以退！</strong>
+          <br/>她真的不知道这句话有多伤心吗？
+        </p>
+      </article>
+      <article>
+        <h4 class="lead mt-4 font-weight-bold">从什么时候开始对她有好感了</h4>
+        <p class="text-muted">应该是从去年 12 月底开始吧. 但是自己真的不是一个会追女孩子的人，技巧不好，又不会逗女孩子开心，还总是惹她生气。完全就是一个直男癌！所以即使到现在还是 不知道所谓的
+          <strong>进度条在哪个位置</strong>.如果没有出现上次的事的话，可能进度条是这样的：
+        </p>
+        <div class="progress w-75">
+          <div class="progress-bar bg-success progress-bar-animated progress-bar-striped" style="width: 50%">50%</div>
+        </div>
+        <p class="text-muted mt-2">结果现在呢？应该是下面这个样子吧
+        </p>
+        <div class="progress w-75">
+          <div class="progress-bar bg-danger" style="width: 10%">&lt;=10%</div>
+        </div>
+        <p class="text-muted mt-2">
+          就算她现在对我已经不信任，或者已经厌恶我了，再也不会原谅咯。不过，这都不重要咯，至少我喜欢过她，虽然有过冲突，有过彼此不信任，但是这段经验也能为了带来很大的帮助。
+          <br/>随着大学的结束，那种看着某个背影像她的女孩子牵着其他男生的手，就紧张兮兮的日子应该也不会再有了吧。
+        </p>
+      </article>
+
+    </sction>
+
+    <section>
+      <h2 class="title mt-5">Memory</h2>
+      <hr/>
+      <div class="d-flex justify-content-between">
+        <p>随着生活和压力的到来，总会忘记一些曾经记得很清楚的人和事，所以我打算记录下来。</p>
+        <a href="#" id="allcollapse" role="button">展开全部</a>
+      </div>
+
+      <article role="tablist">
+        <div class="card mb-2">
+          <header class="card-header">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" href="#thingOne" class="text-muted">
+                2016/11/23
+              </a>
+            </h5>
+          </header>
+          <div class="collapse" id="thingOne">
+            <section class="card-block">
+              <h4 class="card-title">初识</h4>
+              <p class="card-text">
+                声明：是这货加我的。所以我不是一个乱加小学妹的坏学长！ 一加我就问我问题，其实我蛮讨厌这样的（难道我在他们眼中就仅仅只是一个会写点代码的学长？）
+                <br/> 本着职业道德和良心解决了这个问题。后来发现她好像是一个还比较活泼的女生，无聊的我开始每天和她闲聊一下。而且她非常喜欢狗，哈哈，我也是打算以后养只柴犬的。
+              </p>
+            </section>
+          </div>
+        </div>
+        <!--Card one-->
+        <div class="card my-2">
+          <header class="card-header">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" href="#thingTwo" class="text-muted">
+                2016/12/1
+              </a>
+            </h5>
+          </header>
+          <div class="collapse " id="thingTwo">
+            <section class="card-block">
+              <h4 class="card-title">第一次见面</h4>
+              <p class="card-text">
+                工作室的招新已经过了，可是效果没我意向到的那么好。还是不太会说啊。 然后她也因为某些原因，最后是直接交到我手上的。那天敲代码又错过了正常时间（以后不能这样啊(*｀へ´*)）
+                <br/>刚好她也下午没课，所以我们就算第一次见面咯。其实见之前，我看了几张她的照片，给我的印象应该是一个黑长直。
+                <br/>不过，那天看到的扎起了马尾（我最喜欢马尾咯ψ(｀∇´)ψ）她把报名表给我后，简单地聊了几句，当时想到的一件事就是：<strong>如果
+                这个女孩能够好好学习，一定会很好的</strong>。另外，音色确实和长相不够般配啊。
+              </p>
+            </section>
+          </div>
+        </div>
+        <!--Card two-->
+        <div class="card my-2">
+          <header class="card-header">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" href="#thingThree" class="text-muted">
+                2016/12/13
+              </a>
+            </h5>
+          </header>
+          <div class="collapse " id="thingThree">
+            <section class="card-block">
+              <p class="card-text">
+                这天是礼仪风采大赛，女生部主办，女生部部长是我们班的, 所以就当捧个场咯。 没想到的是，得知一号选手是她的室友！所以我就好好看了一下她的演出。
+                <br>虽然现在已经忘记了细节，只记得卡了一段时间。之后的选手就不怎么关注了，自己对这个也不太 感兴趣。不过，在我去上厕所的时候，发现她就坐在右边的倒数几排，和李文洁坐在一起。
+                <br>其实我已经不想看了，但是好纠结要不要上去和她打一个招呼，毕竟是一个腼腆的人啊。 挣扎了十分钟，还是打算简单地问候一下她咯。嗯哼，还是蛮和善的, 也发现似乎对她开始有兴趣咯。
+              </p>
+            </section>
+          </div>
+        </div>
+        <!--Card three-->
+        <div class="card my-2">
+          <header class="card-header">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" href="#thingFour" class="text-muted">
+                2016/12/17
+              </a>
+            </h5>
+          </header>
+          <div class="collapse " id="thingFour">
+            <section class="card-block">
+              <p class="card-text">约好了今天晚上帮她搞电脑的。她们班不知道什么活动，要去八一纪念馆，所以比较晚才回来。 那天其实蛮冷的，但是我又没有好看的大衣类的衣服。就强忍着冷风穿了件衬衫，保持一个好形象。
+                <br>我已经忘记细节了，一路上我们简单地聊了下一些爱好。比如知道了她喜欢足球，喜欢梅西（这个应该是我会一直喜欢她的原因吧） 可是总感觉，她好拘谨啊。到了工作室也不好意思坐下，可能家教比较好吧。 最后回去的时候，请我喝了杯奶茶。但是，我却一直在说，我不太喜欢喝奶茶，建议你也别喝这种意思的话。现在想来，每个人
+                单身确实是有一定理由的啊！ಠ_ರೃ
+                <br>总归来说，我发现那天其实我很紧张，可能也是那天我真正发现，我开始喜欢上这个女孩的咯。所以我打算做点什么。
+              </p>
+            </section>
+          </div>
+        </div>
+        <!--Card four-->
+        <div class="card my-2">
+          <header class="card-header">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" href="#thingFive" class="text-muted">
+                2016/12/18
+              </a>
+            </h5>
+          </header>
+          <div class="collapse " id="thingFive">
+            <section class="card-block">
+              <p class="card-text">
+                星期天。不知道我这种情商负数的人，怎么想到了这个方法。我让黄聪（好吧，这次真的要卖了他）
+                <strong>瞎鸡吧找一个理由，单独约她出来，然后我再出现在那个地方假装偶遇。两男一女，既不尴尬，也不貌似</strong> 不过他办事也靠谱，我打好了啫喱水，理好了发型就去假装偶遇咯～～～
+                <br>这货用一个了解 11 班女生的借口去约她出来，真的很拼。虽然我没有做到主导整个谈话的角色，但至少让她 多了解一下这个看上去蠢蠢的学长吧。
+                <br>这次的“偶遇”还算比较成功，黄聪成功卖了自己，加了卢夕月（不知道这个女孩现在去哪咯） 我也成功献了一次殷勤，不算成功。
+
+                <p><small class="text-muted">可惜课没有刷完，如果当时像现在一样，能写出刷课代码的话，应该会更好一些吧。</small></p>
+              </p>
+            </section>
+          </div>
+        </div>
+        <!--Card five-->
+        <div class="card my-2">
+          <header class="card-header">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" href="#thingSix" class="text-muted">
+                2016/12/23
+              </a>
+            </h5>
+          </header>
+          <div class="collapse " id="thingSix">
+            <section class="card-block">
+              <p class="card-text">
+                其实在那次偶遇之后，我一直在想着做点什么。马上就是平安夜咯，如果送苹果太没意思咯。所以我就打算送点有新意的。
+                <br>以我的能力，好想做不了什么。最后发现，我可以做贺卡啊！ʕ •ᴥ•ʔ 嘻嘻嘻嘻嘻
+                <br>贺卡上写什么呢？我想到要用那种有点像手写的字体，但是我对中文字体不够了解，所以只能用英文写贺卡咯。好吧，◡ ヽ(`Д´)ﾉ ┻━┻
+                <br>想了一个星期该写什么，该怎样构思，该选什么颜色。最后就变成了那个样子。其实现在看起来还能够好看一些, 当然没有那么多如果。 其实，我写的是一个藏头诗啊！
+                <p class="happy">You are the apple in my eye!</p>
+
+                刚好那一天工作室开会，不过她迟到了，但是她来之后，我好像更紧张咯。我当时没发现，别人看出来咯。
+                <br>因为她们也要送苹果给老师，给班上的，所以最后拖到了我接近 11 点的时候才能把礼物送给她。
+                <strong>一张贺卡，一双手套</strong>，希望能够在冬日里，暖暖她的双手吧。
+                <br>回去的时候还一直在祈祷：千万不要看出这是藏头诗，看出来就完了！
+              </p>
+            </section>
+          </div>
+        </div>
+        <!--Card six-->
+
+        <div class="card my-2">
+          <header class="card-header">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" href="#thingSeven" class="text-muted">
+                2016/12/31
+              </a>
+            </h5>
+          </header>
+          <div class="collapse " id="thingSeven">
+            <section class="card-block">
+              <p class="card-text">
+                能在一年的最后一天，教妹子敲代码还是蛮开心的。。。 但是好想画风不太对，她感冒了……一直在打喷嚏
+                <br>为什么我当时不直接跑去药店买药呢？哎，不会撩妹啊！！程序员总是有很多好想法，但是却无法实现。 最后的一个半小时下来，主要就是介绍了一些指针和数组上的问题，还有关于 <code>scanf</code>                的一些问题。
+                <br>还是和之前一样的情况，有些紧张。
+              </p>
+            </section>
+          </div>
+        </div>
+        <!--Card Seven End-->
+
+        <div class="card my-2">
+          <header class="card-header">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" href="#thingEight" class="text-muted">
+                2017/1/4
+              </a>
+            </h5>
+          </header>
+          <div class="collapse" id="thingEight">
+            <section class="card-block">
+              <h4 class="card-title">New Beginning?</h4>
+              <p class="card-text">
+                元旦假期回来，但这几天她没怎么理我。我一直在想是不是那一次翻车咯。。。 在寝室也没什么卵意思，就跑去图书馆玩一下咯。
+                <br>虽然我很讨厌我们学校的图书馆， 就当散散步吧。结果回来的时候，她告诉我，电脑开不了机了该怎么办？
+                <br>刚开始犹豫了一下，<strong>我真的不会修电脑啊！</strong>不过，女孩子都这么说了， 就算两天不睡觉也要搞好啊！马上打了个电话问了后，跑到她寝室楼下。
+                <br>等了几分钟，她下来咯。2017 年第一次见面啊！不过除了电脑外，还提着一个包装盒。 嗯哼，送我的？新年礼物！
+                <br>收下了礼物，但是我强忍着欢喜还是将关注点放在了她的电脑上。我猜想应该是那个D盘导致的 一系列故障吧。所以说，电脑一定要买 Mac 好吗？
+              </p>
+            </section>
+          </div>
+        </div>
+        <!--Card Eight End-->
+
+        <div class="card my-2">
+          <header class="card-header">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" href="#thingNine" class="text-muted">
+                2017/1/6
+              </a>
+            </h5>
+          </header>
+          <div class="collapse" id="thingNine">
+            <section class="card-block">
+              <h4 class="card-title">It's the birthday</h4>
+              <p class="card-text">她的生日到了，又在纠结送什么东西咯。思索了很久， 最后去亚马逊海淘了一只我也不知道算不算贵的 新西兰的口红。 名字我都忘记了，只是感觉包装蛮精致的。
+                <br>亚马逊倒也很快，下单两天后就到了，刚好能赶上她生日送她。
+                <br>不过，她这一天中午是和室友还有教官一起过的，晚上是和家里人一起过的。我根本见不到她啊！ 那下午呢？下午出现了一个小插曲，她班长，竟然做了一个小视频，动员全班的同学来祝贺团支书大人生日快乐。
+                <br>(´･Д･)」WTF！这样比起来，我的礼物算个什么东西啊。。。。不行买都买了，一定要送出去！
+              </p>
+            </section>
+          </div>
+        </div>
+        <!--Card Nine End-->
+
+        <div class="card my-2">
+          <header class="card-header">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" href="#thingTen" class="text-muted">
+                2017/1/7
+              </a>
+            </h5>
+          </header>
+          <div class="collapse" id="thingTen">
+            <section class="card-block">
+              <h4 class="card-title">Happy Birthday</h4>
+              <p class="card-text">
+                大一今天考试，C 语言。晚上终于约到她了！内心其实乐开了花啊，带着修的百分之八十的电脑，还有准备好的礼物。
+                <br>奇怪的是，我到那里的时候，碰到了谭钊和她女朋友。( *｀ω´) 为什么他们会出现在这里，确定不是故意的？ 他看到我也很惊讶，卧槽。我还在纠结要不要换地方的时候，这是她就来了。寝室都没回，提着两本书就来咯。
+                <br><strong>其实蛮感动的，按道理先回寝室再来不是更好吗？</strong>
+                <br>虽然我已经记不太清楚那天说了什么呢，感觉就是扯着扯着也扯到了专业，但是她也还喜欢听。。。 不过呢，没想到我和她聊天的时间竟然超过了谭钊他俩。ψ(｀∇´)ψ
+                <br>一次回寝室的时候，我掏出了礼物。因为直接送口红有点尴尬，所以我就用盒子掩饰了一下，防止她拒收的尴尬。 可惜的是，之前想好的话，到了那个时候都不知道该说什么了，语无伦次的。 但是总归来说，表现的不会太差吧。
+                <p class="text-muted"><small>我知道送口红很私密，不能乱送，但是真的是要豁出去咯。可是这款口红在淘宝上搜只要
+                  60RMB。卧槽，明明花了我 18 欧元的，为什么淘宝上这么便宜？？ 另外，她之后还将喝饮品的钱打回来给我的意图，我一直不太理解。</small></p>
+              </p>
+            </section>
+          </div>
+        </div>
+        <!--Card Ten End-->
+
+        <div class="card">
+          <header class="card-header">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" href="#thing11" class="text-muted">
+                中场休息
+              </a>
+            </h5>
+          </header>
+          <div class="collapse" id="thing11">
+            <section class="card-block">
+              <p class="card-text">
+                回忆并不是一件简单的事情，我之所以能记住这些时间点也不过是因为日历帮我记录了这些。
+                <br>而且从这一天之后，我的心急和一些其他问题暴露了出来，导致了事态的转变。
+                <br>所以打算休息一段时间，等以后的日子再重新回忆吧。
+              </p>
+            </section>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+
+  <script src="js/jquery-3.1.1.slim.min.js"></script>
+  <!--<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script>
+  <script aysnc src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>-->
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+    let isCollapsed = false;
+    $('#allcollapse').click(function(e) {
+      e.preventDefault();
+      let target = $(this);
+      if (isCollapsed) {
+      $('div.collapse').collapse('hide');
+        target.html('展开全部');
+      } else {
+      $('div.collapse').collapse('show');
+        target.html('折叠全部')
+      }
+      isCollapsed = !isCollapsed;
+
+    });
+
+  </script>
+</body>
+
+</html>
