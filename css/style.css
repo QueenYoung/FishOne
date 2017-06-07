@@ -260,3 +260,11 @@ body {
   grid-column-gap: 5px;
   grid-row-gap: 5px;
 }
+
+#carouselModal button.close {
+  position: absolute;
+  right: 20px;
+}
+#carouselModal button.close > span{
+  color: black;
+}
