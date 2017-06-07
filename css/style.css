@@ -252,6 +252,9 @@ body {
   a[data-toggle="modal"] {
     width: 50%;
   }
+  div.modal {
+    max-height: 80%;
+  }
 }
 
 #grid {
@@ -259,12 +262,4 @@ body {
   grid: repeat(3, 1fr) / auto-flow 1fr;
   grid-column-gap: 5px;
   grid-row-gap: 5px;
-}
-
-#carouselModal button.close {
-  position: absolute;
-  right: 20px;
-}
-#carouselModal button.close > span{
-  color: black;
 }
