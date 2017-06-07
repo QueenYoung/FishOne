@@ -25,7 +25,8 @@ nav+.jumbotron {
   font-size: 30px;
 }
 
-h2.title, h1.title {
+h2.title,
+h1.title {
   font-family: 'My Font';
 }
 
@@ -217,7 +218,6 @@ body {
   animation: 0.5s .1s myshake;
 }
 
-
 @media screen and (max-width: 768px) {
   .timeline::before {
     left: 50px;
@@ -248,9 +248,15 @@ body {
     right: auto;
     left: 0;
   }
-
   /*the profile not be so large*/
   a[data-toggle="modal"] {
     width: 50%;
   }
+}
+
+#grid {
+  display: grid;
+  grid: repeat(3, 1fr) / auto-flow 1fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
 }
