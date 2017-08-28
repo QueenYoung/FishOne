@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --color --progress",
-    "build": "webpack -p",
+    "build": "webpack ",
     "dev": "browser-sync start -s -f \"./src/*\" --directory"
   }
 }

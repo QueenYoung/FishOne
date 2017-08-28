@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
-const PUBLIC_PATH = 'fishone.xyz';
+const PUBLIC_PATH = 'http://localhost:5000/';
 
 module.exports = {
   entry: './src/index.js',
@@ -64,14 +64,9 @@ module.exports = {
       cacheId: 'my-project-name',
       dontCacheBustUrlsMatching: /\.\w{8}\./,
       filename: 'service-worker.js',
-      minify: true,
+      // minify: true,
       navigateFallback: PUBLIC_PATH + 'index.html',
       staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
-      staticFileGlobs: [
-        'src/img/**.*',
-        'src/fonts/*',
-        'src/css/style.css',
-      ],
       mergeStaticsConfig: true
     })
   ],

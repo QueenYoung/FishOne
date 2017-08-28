@@ -25,26 +25,27 @@
 
 <body class="bg-faded">
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbar">
+    <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbar" type="button">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a href="#" class="navbar-brand" data-toggle="modal" id="profile" data-target="#brief">
-      <img class="rounded-circle mr-2" width="40px" height="40px" src="img/logo.jpg" />
-    </a>
 
     <div class="collapse navbar-collapse" id="navbar">
-      <ul class="navbar-nav mr-auto ml-5">
+      <a href="#" class="navbar-brand my-auto">Fish One</a>
+      <ul class="navbar-nav mr-auto ml-3">
         <li class="nav-item">
           <a class="nav-link" href="./index.html">Introduction</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Reason</a>
+        <li class="nav-item justify-content-around">
+          <a class="nav-link" href="#" active>Reason </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./secret.html">Secret</a>
         </li>
       </ul>
     </div>
+    <a href="#" data-toggle="modal" data-target="#brief">
+      <img class="rounded-circle mr-2" width="40px" height="40px" src="img/logo.jpg" />
+    </a>
   </nav>
 
   <div class="modal fade" id="brief" tabindex="-1" role="dialog">
@@ -53,11 +54,13 @@
         <header class="modal-header card-header" style="background: white">
           <h5 class="modal-title">Profile</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+            <span aria-hidden="true">&times;</span>
+          </button>
         </header>
         <article class="card-body modal-body mx-4" style="font-family: 'My Font'">
-          <figure class="d-flex justify-content-center mb-2 figure"><img class="rounded-circle figure-img" src="img/logo.jpg" style="width: 88px"></figure>
+          <figure class="d-flex justify-content-center mb-2 figure">
+            <img class="rounded-circle figure-img" src="img/logo.jpg" width="88px" height="88px">
+          </figure>
           <h4 class="card-title">About Her</h4>
           <form>
             <div class="row" style="margin-bottom: -20px">
