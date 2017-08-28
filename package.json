@@ -12,6 +12,7 @@
     "webpack": "^3.5.5"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^0.1.16",
     "css-loader": "^0.28.5",
     "file-loader": "^0.11.2",
     "html-loader": "^0.5.1",
@@ -21,7 +22,7 @@
     "sw-precache-webpack-plugin": "^0.11.4"
   },
   "scripts": {
-    "start": "webpack-dev-server --color --progress --open",
+    "start": "webpack-dev-server --color --progress",
     "build": "webpack -p",
     "dev": "browser-sync start -s -f \"./src/*\" --directory"
   }
