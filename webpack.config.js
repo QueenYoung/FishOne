@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
-const PUBLIC_PATH = 'http://localhost:5000/';
+const PUBLIC_PATH = 'fishone.xyz/';
 
 module.exports = {
   entry: './src/index.js',
