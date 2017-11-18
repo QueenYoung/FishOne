@@ -1,21 +1,27 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Profile from './components/Profile'
+import Modal from './components/Modal'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+      <BrowserRouter>
+        <main className="app">
+          <Route path="/" component={Navbar}/>
+          <Route
+            path="/profile"
+            render={({ history }) => (
+              <Modal history={history}>
+                <Profile />
+              </Modal>
+            )}
+          />
+        </main>
+      </BrowserRouter>
+    )
   }
 }
 
-export default App;
+export default App
