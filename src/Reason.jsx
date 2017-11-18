@@ -1,7 +1,6 @@
 import React from 'react'
 const Reason = () => (
   <section className="section">
-    <div className="tile is-ancestor">
       <div className="tile is-ancestor">
         <div className="tile is-vertical is-8">
           <div className="tile">
@@ -23,7 +22,7 @@ const Reason = () => (
                   className="image is-4by3"
                   style={{ margin: '0 -20px -20px' }}
                 >
-                  <img src="https://bulma.io/images/placeholders/640x480.png" />
+                  <img src="https://bulma.io/images/placeholders/640x480.png" alt='test'/>
                 </figure>
               </article>
             </div>
@@ -77,7 +76,6 @@ const Reason = () => (
           </article>
         </div>
       </div>
-    </div>
   </section>
 )
 

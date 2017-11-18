@@ -5,7 +5,6 @@ const Modal = ({ children, history }) => {
     <div className={`modal is-active`}>
       <div className="modal-background" onClick={onClose} />
       <article className="modal-content" style={{
-        width: `calc(40% - 1rem)`,
         paddingTop: '3.25rem'
       }}>
         {children}

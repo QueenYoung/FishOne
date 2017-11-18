@@ -196,18 +196,18 @@ body {
   .timeline::before {
     left: 50px;
   }
-  .timeline .timeline-img {
+  .timeline-img {
     left: 50px;
   }
-  .timeline .timeline-content {
+  .timeline-item > .timeline-content {
     max-width: 100%;
     width: auto;
     margin-left: 70px;
   }
-  .timeline .timeline-item:nth-child(even) .timeline-content {
+  .timeline-item:nth-child(even) .timeline-content {
     float: none;
   }
-  .timeline .timeline-item:nth-child(odd) .timeline-content::after {
+  .timeline-item:nth-child(odd) .timeline-content::after {
     content: '';
     position: absolute;
     border-style: solid;
@@ -222,13 +222,6 @@ body {
     right: auto;
     left: 0;
   }
-  /*the profile not be so large*/
-  a[data-toggle="modal"] {
-    width: 50%;
-  }
-  .carousel-inner img {
-    max-height: 400px;
-  }
 }
 
 #grid {
@@ -236,4 +229,10 @@ body {
   grid: repeat(3, 1fr) / auto-flow 1fr;
   grid-column-gap: 5px;
   grid-row-gap: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  article.modal-content {
+    width: calc(40% - 1rem);
+  }
 }

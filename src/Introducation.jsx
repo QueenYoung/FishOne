@@ -24,9 +24,9 @@ const Introducation = ({ hero, selfies = [], articles = [] }) => (
           articles.map((article, i) => (
             <div className="timeline-item" key={article.date}>
               <div className="timeline-img"/>
-                <div className="timeline-content">
-                <Card { ...article } i={i}/>
-                </div>
+              <div className="timeline-content">
+              <Card { ...article } i={i}/>
+              </div>
             </div>
           ))
         }
