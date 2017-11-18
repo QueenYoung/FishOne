@@ -3,7 +3,7 @@
   src: url("./fonts/JosefinSans-Italic.ttf")
 }
 
-.title {
+.title, .subtitle {
   font-family: 'My Font';
 }
 

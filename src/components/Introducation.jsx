@@ -21,11 +21,11 @@ const Introducation = ({ hero, selfies = [], articles = [] }) => (
       <h2 className="title">Timeline</h2>
       <section className="timeline container">
         {
-          articles.map(article => (
+          articles.map((article, i) => (
             <div className="timeline-item" key={article.date}>
               <div className="timeline-img"/>
                 <div className="timeline-content">
-                  <Card {...article}/>
+                <Card { ...article } i={i}/>
                 </div>
             </div>
           ))

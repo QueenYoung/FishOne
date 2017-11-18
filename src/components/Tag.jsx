@@ -5,7 +5,7 @@ const Tag = ({ color='is-dark', invert=false, children }) => (
     style={{
       position: 'absolute',
       top: 0,
-      [invert ? 'right' : 'left']: 0
+      [invert ? 'left' : 'right']: 0
     }}
   >{children}</span>
 );
