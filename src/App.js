@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Introducation from './Introducation';
+import Reason from './Reason'
 import Navbar from './components/Navbar'
 import Profile from './components/Profile'
-import Introducation from './components/Introducation';
 import Modal from './components/Modal'
 import Image from './components/Image'
 
@@ -41,7 +42,7 @@ class App extends Component {
             )}
           />
           <Switch>
-            <Route path="/reason" render={() => <p>Hello</p>}/>
+            <Route path="/reason" component={Reason}/>
             <Route path="/" render={
               () => <Introducation {...data}/>
             } />

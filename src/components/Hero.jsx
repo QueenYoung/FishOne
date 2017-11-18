@@ -1,6 +1,6 @@
 import React from 'react'
 const Hero = props => (
-  <section className="hero is-bold is-medium" style={
+  <section className="hero is-bold" style={
     { backgroundColor: '#daf4fa' }
   }>
     <div className="hero-body">

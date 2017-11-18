@@ -1,6 +1,6 @@
 import React from 'react';
-import Hero from './Hero'
-import Card from './Card'
+import Hero from './components/Hero'
+import Card from './components/Card'
 const Introducation = ({ hero, selfies = [], articles = [] }) => (
   <div>
     <Hero {...hero}/>
