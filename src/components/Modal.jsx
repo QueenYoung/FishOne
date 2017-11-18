@@ -1,6 +1,6 @@
 import React from 'react';
 const Modal = ({ children, history }) => {
-  const onClose = () => history.push('/')
+  const onClose = () => history.goBack()
   return (
     <div className={`modal is-active`}>
       <div className="modal-background" onClick={onClose} />

@@ -6,7 +6,7 @@ class NavBar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar is-light">
+        <nav className="navbar is-light is-fixed-top">
           <div className="navbar-brand">
           <NavLink
             className="navbar-item"

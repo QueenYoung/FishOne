@@ -1,8 +1,15 @@
 import React from 'react';
 
-const Image = ({ src, size }) => (
+const round = {
+  borderRadius: '50%'
+}
+const Image = ({ src, size='', circle=false }) => (
   <p className={`image ${size}`}>
-    <img src={src} alt="A easy" className="is-rounded"/>
+    <img
+      src={src}
+      alt="A easy"
+      style={circle ? round : {}}
+    />
   </p>
 );
 
