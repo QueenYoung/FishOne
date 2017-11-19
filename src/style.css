@@ -61,10 +61,20 @@
   .column .card .image:hover {
     animation: 1.2s ease-out myblur both;
   }
+
+  article.modal-content {
+    width: calc(40% - 1rem);
+  }
+  .columns .column {
+    margin: 0 .75em
+  }
+  .navbar-brand > .navbar-item:hover {
+    animation: .3s blink 3 alternate;
+  }
 }
 
-.navbar-brand:hover {
-  animation: .3s blink 3 alternate;
+main {
+  transition: all .3s ease-out;
 }
 
 .is-flex .image > img {
@@ -229,10 +239,4 @@ body {
   grid: repeat(3, 1fr) / auto-flow 1fr;
   grid-column-gap: 5px;
   grid-row-gap: 5px;
-}
-
-@media screen and (min-width: 768px) {
-  article.modal-content {
-    width: calc(40% - 1rem);
-  }
 }

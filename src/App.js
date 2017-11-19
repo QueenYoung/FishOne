@@ -9,20 +9,38 @@ import Image from './components/Image'
 
 class App extends Component {
   state = {
-    data: {}
+    data: {},
+    isNavbarToggle: false
   }
-  componentWillMount() {
+  componentWillMount () {
     import('./articles.js').then(({ default: data }) => {
       this.setState({ data })
     })
   }
 
-  render() {
-    const { state: { data } } = this
+  onToggleNavbar = () => {
+    this.setState(prev => ({
+      isNavbarToggle: !prev.isNavbarToggle
+    }))
+  }
+
+  pushdown = (isToggle) => {
+    if (!isToggle) {
+      return {
+        transform: 'translateY(0)'
+      }
+    }
+    const height = document.querySelector('nav.navbar').offsetHeight
+    return {
+      transform: `translateY(calc(${height}px + 3.25rem))`
+    }
+  }
+  render () {
+    const { state: { data, isNavbarToggle } } = this
     return (
       <BrowserRouter>
-        <main className="app">
-          <Navbar/>
+        <div className="app">
+          <Navbar onClick={this.onToggleNavbar} isToggle={isNavbarToggle}/>
           <Route
             path="/profile"
             render={({ history }) => (
@@ -41,13 +59,15 @@ class App extends Component {
               </Modal>
             )}
           />
-          <Switch>
-            <Route path="/reason" component={Reason}/>
-            <Route path="/" render={
-              () => <Introducation {...data}/>
-            } />
-          </Switch>
-        </main>
+          <main style={this.pushdown(isNavbarToggle)}>
+            <Switch>
+              <Route path="/reason" component={Reason}/>
+              <Route path="/" render={
+                () => <Introducation {...data}/>
+              } />
+            </Switch>
+          </main>
+        </div>
       </BrowserRouter>
     )
   }

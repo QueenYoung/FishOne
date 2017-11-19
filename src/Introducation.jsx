@@ -1,6 +1,8 @@
 import React from 'react';
 import Hero from './components/Hero'
 import Card from './components/Card'
+
+
 const Introducation = ({ hero, selfies = [], articles = [] }) => (
   <div>
     <Hero {...hero}/>
@@ -9,9 +11,7 @@ const Introducation = ({ hero, selfies = [], articles = [] }) => (
       <div className="columns">
         {
           selfies.map((selfies, i) => (
-            <div className="column" key={i}
-              style={{margin: '0 .75em'}}
-            >
+            <div className="column" key={i}>
               <Card {...selfies} />
             </div>
           ))
