@@ -1,33 +1,24 @@
 @font-face {
   font-family: 'My Font';
-  src: url("../fonts/JosefinSans-Italic.ttf")
+  src: url("./fonts/JosefinSans-Italic.ttf")
+}
+
+.title, .subtitle {
+  font-family: 'My Font';
 }
 
 @font-face {
   font-family: 'Happy Font';
-  src: url("../fonts/LoveYaLikeASister.ttf");
+  src: url("./fonts/LoveYaLikeASister.ttf");
 }
 
-nav+.jumbotron {
+.hero, .hero .title, .hero .subtitle {
   font-family: 'Happy Font';
   background: #daf4fa;
 }
 
 .happy {
   font-family: 'Happy Font';
-}
-
-.navbar-brand {
-  font-family: 'My Font';
-}
-
-.navbar-title {
-  font-size: 30px;
-}
-
-h2.title,
-h1.title {
-  font-family: 'My Font';
 }
 
 @keyframes blink {
@@ -45,49 +36,37 @@ h1.title {
   }
 }
 
-.card-subtitle {
-  color: #636c72;
-}
-
-.card-deck .card {
-  transition: all ease-in-out .8s;
-  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
-  transform-style: preserve-3d;
-}
 
 @media screen and (min-width: 768px) {
-  .card-deck .card img {
-    filter: blur(10px);
-    overflow: hidden;
+  .column .card {
+    transition: transform 0.8s
   }
-  @keyframes myblur {
-    0% {
-      filter: blur(10px);
-    }
-    100% {
-      filter: blur(0);
-    }
-  }
-  .card-deck .card:hover {
+  .column .card:hover {
     box-shadow: 0px 15px 30px 0px rgba(0, 0, 0, 0.7);
     transform: scale(1.05, 1.05);
   }
 
-  .card-deck .card img:hover {
-    animation: 1.2s ease-out myblur both;
+  article.modal-content {
+    width: calc(40% - 1rem);
+  }
+  .columns .column {
+    margin: 0 .75em
+  }
+  .navbar-brand > .navbar-item:hover {
+    animation: .3s blink 3 alternate;
   }
 }
 
-#profile:hover {
-  animation: .3s blink 3 alternate;
+main {
+  transition: all .3s ease-out;
 }
 
-img.figure-img {
+.is-flex .image > img {
   box-shadow: 4px 10px 8px rgba(0, 0, 0, .4);
   transition: all linear 0.5s;
 }
 
-img.figure-img:hover {
+.is-flex .image > img:hover {
   transform: rotate(360deg) scale(1.4, 1.4);
 }
 
@@ -169,7 +148,7 @@ body {
   margin-left: -15px;
 }
 
-.timeline-item>.card {
+.timeline-item>.timeline-content {
   width: 45%;
   padding: 0;
 }
@@ -211,18 +190,18 @@ body {
   .timeline::before {
     left: 50px;
   }
-  .timeline .timeline-img {
+  .timeline-img {
     left: 50px;
   }
-  .timeline .timeline-content {
+  .timeline-item > .timeline-content {
     max-width: 100%;
     width: auto;
     margin-left: 70px;
   }
-  .timeline .timeline-item:nth-child(even) .timeline-content {
+  .timeline-item:nth-child(even) .timeline-content {
     float: none;
   }
-  .timeline .timeline-item:nth-child(odd) .timeline-content::after {
+  .timeline-item:nth-child(odd) .timeline-content::after {
     content: '';
     position: absolute;
     border-style: solid;
@@ -237,13 +216,6 @@ body {
     right: auto;
     left: 0;
   }
-  /*the profile not be so large*/
-  a[data-toggle="modal"] {
-    width: 50%;
-  }
-  .carousel-inner img {
-    max-height: 400px;
-  }
 }
 
 #grid {
@@ -251,4 +223,9 @@ body {
   grid: repeat(3, 1fr) / auto-flow 1fr;
   grid-column-gap: 5px;
   grid-row-gap: 5px;
+}
+
+
+nav.navbar {
+  height: 3.25rem
 }
