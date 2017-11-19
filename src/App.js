@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Profile from './components/Profile'
 import Modal from './components/Modal'
 import Image from './components/Image'
+import './a'
 
 class App extends Component {
   state = {
@@ -19,8 +20,8 @@ class App extends Component {
   }
 
   onToggleNavbar = () => {
-    this.setState(prev => ({
-      isNavbarToggle: !prev.isNavbarToggle
+    this.setState(({ isNavbarToggle }) => ({
+      isNavbarToggle: !isNavbarToggle,
     }))
   }
 
@@ -35,6 +36,7 @@ class App extends Component {
       transform: `translateY(calc(${height}px + 3.25rem))`
     }
   }
+
   render () {
     const { state: { data, isNavbarToggle } } = this
     return (

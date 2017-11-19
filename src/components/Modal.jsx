@@ -2,7 +2,7 @@ import React from 'react';
 const Modal = ({ children, history }) => {
   const onClose = () => history.goBack()
   return (
-    <div className={`modal is-active`} style={{paddingTop: '3.25rem'}}>
+    <div className='modal is-active' style={{paddingTop: '3.25rem'}}>
       <div className="modal-background" onClick={onClose} />
       <article className="modal-content">
         {children}

@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Logo from '../img/logo.jpg'
 const NavBar = ({ onClick, isToggle }) => (
-  <nav className="navbar is-light is-fixed-top">
+  <nav className="navbar is-dark is-fixed-top has-shadow">
     <div className="navbar-brand">
       <NavLink className="navbar-item" to="/profile">
         <div
@@ -18,7 +18,7 @@ const NavBar = ({ onClick, isToggle }) => (
         />
       </NavLink>
       <button
-        className={`button navbar-burger ${isToggle ? 'is-active' : ''}`}
+        className={`burger navbar-burger ${isToggle ? 'is-active' : ''}`}
         onClick={onClick}
       >
         <span />
@@ -26,7 +26,8 @@ const NavBar = ({ onClick, isToggle }) => (
         <span />
       </button>
     </div>
-    <menu className={`navbar-menu ${isToggle ? 'is-active' : ''}`}>
+    <di className={`navbar-menu ${isToggle ? 'is-active' : ''}`}>
+    <div className="navbar-start">
       <NavLink to="/" className="navbar-item" exact activeClassName="is-active">
         Introducation
       </NavLink>
@@ -38,7 +39,8 @@ const NavBar = ({ onClick, isToggle }) => (
       >
         Reason
       </NavLink>
-    </menu>
+      </div>
+    </di>
   </nav>
 )
 
