@@ -40,7 +40,7 @@ class App extends Component {
   render () {
     const { state: { data, isNavbarToggle } } = this
     return (
-      <BrowserRouter>
+      <BrowserRouter >
         <div className="app">
           <Navbar onClick={this.onToggleNavbar} isToggle={isNavbarToggle}/>
           <Route

@@ -6,8 +6,9 @@ import Card from './components/Card'
 const Introducation = ({ hero, selfies = [], articles = [] }) => (
   <div>
     <Hero {...hero}/>
-    <hr/>
     <section className="section">
+      <hr/>
+      <h2 className="title">Selfies</h2>
       <div className="columns">
         {
           selfies.map((selfies, i) => (

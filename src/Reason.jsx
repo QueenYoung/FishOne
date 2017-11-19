@@ -1,6 +1,7 @@
 import React from 'react'
 const Reason = () => (
   <section className="section">
+      <h3 className="subtitle">未完成</h3>
       <div className="tile is-ancestor">
         <div className="tile is-vertical is-8">
           <div className="tile">
