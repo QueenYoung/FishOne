@@ -11,7 +11,7 @@ class App extends Component {
   state = {
     data: {}
   }
-  componentDidMount() {
+  componentWillMount() {
     import('./articles.js').then(({ default: data }) => {
       this.setState({ data })
     })

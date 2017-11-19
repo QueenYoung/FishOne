@@ -12,7 +12,7 @@
   src: url("./fonts/LoveYaLikeASister.ttf");
 }
 
-.hero, .hero .title {
+.hero, .hero .title, .hero .subtitle {
   font-family: 'Happy Font';
   background: #daf4fa;
 }
