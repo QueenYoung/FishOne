@@ -14,7 +14,7 @@ const Card = ({ pic, text, title, date, i, children, notLink, size }) => {
         <Wrapper>
           <figure className={`image ${size}`}>
             <img
-              src={pic || 'https://bulma.io/images/placeholders/1280x960.png'}
+              data-src={pic}
               alt="邱译莹"
               style={{
                 objectFit: 'cover',

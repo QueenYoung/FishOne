@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Introducation from './Introducation';
 import Reason from './Reason'
@@ -6,17 +7,30 @@ import Navbar from './components/Navbar'
 import Profile from './components/Profile'
 import Modal from './components/Modal'
 import Image from './components/Image'
-import './a'
+import './navbar-hidden';
 
 class App extends Component {
   state = {
     data: {},
     isNavbarToggle: false
   }
-  componentWillMount () {
+
+  observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const { target: img } = entry;
+      img.src = img.dataset.src;
+      img.onload = img.onerror = this.observer.unobserve(img);
+    });
+  })
+
+  componentDidMount () {
     import('./articles.js').then(({ default: data }) => {
       this.setState({ data })
-    })
+    }).then(() => Array.from(
+      document.querySelectorAll('img')).forEach(
+      img => this.observer.observe(img))
+    );
   }
 
   onToggleNavbar = () => {

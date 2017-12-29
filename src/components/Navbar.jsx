@@ -26,7 +26,7 @@ const NavBar = ({ onClick, isToggle }) => (
         <span />
       </button>
     </div>
-    <di className={`navbar-menu ${isToggle ? 'is-active' : ''}`}>
+    <div className={`navbar-menu ${isToggle ? 'is-active' : ''}`}>
     <div className="navbar-start">
       <NavLink to="/" className="navbar-item" exact activeClassName="is-active">
         Introducation
@@ -40,7 +40,7 @@ const NavBar = ({ onClick, isToggle }) => (
         Reason
       </NavLink>
       </div>
-    </di>
+    </div>
   </nav>
 )
 

@@ -1,13 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const round = {
   borderRadius: '50%'
 }
-const Image = ({ src, size='', circle=false }) => (
+const Image = ({ src, size = '', circle = false }, { observer }) => (
   <p className={`image ${size}`}>
     <img
-      src={src}
-      alt="A easy"
+      data-src={src}
+      alt="loading"
       style={circle ? round : {}}
     />
   </p>
