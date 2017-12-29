@@ -1,4 +1,4 @@
-
+import { throttle } from 'lodash';
 
 document.addEventListener('DOMContentLoaded', function() {
   // Scrolling
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var ticking = false
   var lastY = 0
 
-  window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', throttle(function() {
     var currentY = window.scrollY
 
     if (!ticking) {
@@ -91,5 +91,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     ticking = true
-  })
+  }), 250)
 })

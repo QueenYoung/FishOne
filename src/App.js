@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Introducation from './Introducation';
 import Reason from './Reason'
@@ -8,6 +7,10 @@ import Profile from './components/Profile'
 import Modal from './components/Modal'
 import Image from './components/Image'
 import './navbar-hidden';
+import { throttle } from 'lodash';
+import 'intersection-observer';
+
+
 
 class App extends Component {
   state = {
@@ -24,6 +27,15 @@ class App extends Component {
     });
   })
 
+  togglePointerEvent = throttle((() => {
+    let timer;
+    return () => {
+      clearTimeout(timer);
+      document.body.style.pointerEvents = 'none';
+      timer = setTimeout(() => document.body.style.pointerEvents = 'auto', 100);
+    }
+  })(), 250)
+
   componentDidMount () {
     import('./articles.js').then(({ default: data }) => {
       this.setState({ data })
@@ -31,6 +43,11 @@ class App extends Component {
       document.querySelectorAll('img')).forEach(
       img => this.observer.observe(img))
     );
+    window.addEventListener('scroll', this.togglePointerEvent);
+  }
+
+  componentWillUnmount() {
+    this.observer.disconnect();
   }
 
   onToggleNavbar = () => {
