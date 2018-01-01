@@ -1,41 +1,58 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Tag from './Tag'
-const Card = ({ pic, text, title, date, i, children, notLink, size }) => {
-  const Wrapper = props =>
-    notLink ? (
-      <div>{props.children}</div>
-    ) : (
-      <Link to={pic || '#'}>{props.children}</Link>
-    )
-  return (
-    <div className="card">
-      <div className="card-image">
-        <Wrapper>
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Tag from './Tag';
+class Card extends Component {
+  static defaultProps = {
+    lazy: true
+  };
+  static propTypes = {
+    pic: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    text: PropTypes.string,
+    i: PropTypes.number,
+    lazy: PropTypes.bool,
+    zooming: PropTypes.object
+  };
+
+  componentDidMount() {
+    const { zooming } = this.props;
+    zooming && zooming.listen(this.img);
+  }
+
+  render() {
+    const { pic, text, title, date, i, children, size, lazy } = this.props;
+    return (
+      <div className="card">
+        <div className="card-image">
           <figure className={`image ${size}`}>
-            <img
-              data-src={pic}
-              alt="邱译莹"
-              style={{
-                objectFit: 'cover',
-                objectPosition: 'top'
-              }}
-            />
+              <img
+                data-origin={pic}
+                ref={node => (this.img = node)}
+                data-src={lazy && pic}
+                src={lazy ? '' : pic}
+                alt="邱译莹"
+                data-action="zoom"
+                style={{
+                  objectFit: 'cover',
+                  objectPosition: 'top'
+                }}
+              />
           </figure>
-        </Wrapper>
-      </div>
-      <div className="card-content">
-        {children || (
-          <div>
-            {title && <h3 className="title">{title}</h3>}
-            <div className="content">
-              <p>{text}</p>
-              {date && <Tag invert={i % 2}>{date}</Tag>}
+        </div>
+        <div className="card-content">
+          {children || (
+            <div>
+              {title && <h3 className="title">{title}</h3>}
+              <div className="content">
+                <p>{text}</p>
+                {date && <Tag invert={i % 2}>{date}</Tag>}
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
-    </div>
-  )
+    );
+  }
 }
-export default Card
+
+export default Card;

@@ -6,7 +6,7 @@ import Card from './Card'
 import Level from './Level'
 
 const Profile = () => (
-  <Card pic={cardImg} notLink size="is-4by3">
+  <Card pic={cardImg} size="is-4by3" lazy={false}>
     <Media src={Cat} title="邱译莹" subtitle="@fishone" />
     <Level
       copy={[
@@ -16,8 +16,7 @@ const Profile = () => (
       ]}
       size="is-6"
     />
-    <div className="content">
-    </div>
+    <div className="content"></div>
   </Card>
 )
 

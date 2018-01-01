@@ -38,12 +38,8 @@
 
 
 @media screen and (min-width: 768px) {
-  .column .card {
-    transition: transform 0.8s
-  }
   .column .card:hover {
-    box-shadow: 0px 15px 30px 0px rgba(0, 0, 0, 0.7);
-    transform: scale(1.05, 1.05);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   article.modal-content {
@@ -171,19 +167,6 @@ body {
   right: -15px;
   border-width: 10px 0 10px 15px;
   border-color: transparent transparent transparent #f5f5f5;
-}
-
-@keyframes myshake {
-  0% {
-    transform: rotateY(15deg) scale(1.1);
-  }
-  50% {
-    transform: rotateY(-30deg) scale(1.1);
-  }
-}
-
-.timeline-content:hover {
-  animation: 0.5s .1s myshake;
 }
 
 @media screen and (max-width: 768px) {

@@ -5,25 +5,23 @@ import Reason from './Reason'
 import Navbar from './components/Navbar'
 import Profile from './components/Profile'
 import Modal from './components/Modal'
-import Image from './components/Image'
-import './navbar-hidden';
+// import './navbar-hidden';
 import { throttle } from 'lodash';
 import 'intersection-observer';
-
-
-
 class App extends Component {
   state = {
     data: {},
     isNavbarToggle: false
   }
-
   observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       const { target: img } = entry;
       img.src = img.dataset.src;
-      img.onload = img.onerror = this.observer.unobserve(img);
+      img.onerror = this.observer.unobserve(img);
+      img.onload = () => {
+        this.observer.unobserve(img);
+      }
     });
   })
 
@@ -40,10 +38,14 @@ class App extends Component {
     import('./articles.js').then(({ default: data }) => {
       this.setState({ data })
     }).then(() => Array.from(
-      document.querySelectorAll('img')).forEach(
-      img => this.observer.observe(img))
+      document.querySelectorAll('img')).forEach(img => {
+        // this.setState(({ hasImgsLoad: prev }) => ({
+        //   hasImgsLoad: { ...prev, [img.dataset.src]: false }
+        // }));
+        this.observer.observe(img)
+      })
     );
-    window.addEventListener('scroll', this.togglePointerEvent);
+    // window.addEventListener('scroll', this.togglePointerEvent);
   }
 
   componentWillUnmount() {
@@ -82,21 +84,11 @@ class App extends Component {
               </Modal>
             )}
           />
-          <Route
-            path='/static/media/:src'
-            render={({ history, match }) => (
-              <Modal history={history}>
-                <Image
-                  src={match.params.src}
-                />
-              </Modal>
-            )}
-          />
           <main style={this.pushdown(isNavbarToggle)}>
             <Switch>
               <Route path="/reason" component={Reason}/>
               <Route path="/" render={
-                () => <Introducation {...data}/>
+                () => <Introducation {...data} />
               } />
             </Switch>
           </main>

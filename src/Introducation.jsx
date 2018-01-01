@@ -2,6 +2,13 @@ import React from 'react';
 import Hero from './components/Hero'
 import Card from './components/Card'
 
+import Zooming from 'zooming';
+
+const zooming = new Zooming({
+  bgColor: '#000',
+  bgOpacity: 0.8,
+  enableGrab: false,
+});
 
 const Introducation = ({ hero, selfies = [], articles = [] }) => (
   <div>
@@ -13,7 +20,7 @@ const Introducation = ({ hero, selfies = [], articles = [] }) => (
         {
           selfies.map((selfies, i) => (
             <div className="column" key={i}>
-              <Card {...selfies} />
+              <Card {...selfies} lazy zooming={zooming}/>
             </div>
           ))
         }
@@ -26,7 +33,7 @@ const Introducation = ({ hero, selfies = [], articles = [] }) => (
             <div className="timeline-item" key={article.date}>
               <div className="timeline-img"/>
               <div className="timeline-content">
-              <Card { ...article } i={i}/>
+                <Card { ...article } i={i} lazy zooming={zooming} />
               </div>
             </div>
           ))
