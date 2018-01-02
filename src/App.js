@@ -5,7 +5,7 @@ import Reason from './Reason'
 import Navbar from './components/Navbar'
 import Profile from './components/Profile'
 import Modal from './components/Modal'
-// import './navbar-hidden';
+import './navbar-hidden';
 import { throttle } from 'lodash';
 import 'intersection-observer';
 import PropTypes from 'prop-types';

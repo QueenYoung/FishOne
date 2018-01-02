@@ -28,10 +28,6 @@ class Card extends Component {
     }
   }
 
-  componentWillUnmount() {
-    this.context.observer.unobserve(this.img);
-  }
-
   render() {
     const { pic, text, title, date, i, children, size, lazy } = this.props;
     return (
