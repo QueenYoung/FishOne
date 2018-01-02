@@ -429,8 +429,7 @@ var overlay = {
       left: 0,
       right: 0,
       bottom: 0,
-      opacity: 0,
-      pointerEvents: 'none'
+      opacity: 0
     });
 
     this.updateStyle(instance.options);
@@ -451,13 +450,12 @@ var overlay = {
     this.parent.removeChild(this.el);
   },
   fadeIn: function fadeIn() {
-    this.el.offsetWidth;
     this.el.style.opacity = this.instance.options.bgOpacity;
-    this.el.style.pointerEvents = 'none';
+    document.body.style.pointerEvents = 'none';
   },
   fadeOut: function fadeOut() {
     this.el.style.opacity = 0;
-    this.el.style.pointerEvents = 'auto';
+    document.body.style.pointerEvents = 'auto';
   }
 };
 

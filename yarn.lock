@@ -6696,7 +6696,3 @@ yargs@~3.10.0:
     cliui "^2.1.0"
     decamelize "^1.0.0"
     window-size "0.1.0"
-
-zooming@^1.2.6:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/zooming/-/zooming-1.2.6.tgz#89021d221cfb45a5bbfc7bdc8db7e918d219d4e0"

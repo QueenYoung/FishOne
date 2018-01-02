@@ -5,8 +5,7 @@ import Reason from './Reason'
 import Navbar from './components/Navbar'
 import Profile from './components/Profile'
 import Modal from './components/Modal'
-import './navbar-hidden';
-import { throttle } from 'lodash';
+import './navbar-hidden.js';
 import 'intersection-observer';
 import PropTypes from 'prop-types';
 class App extends Component {
@@ -39,25 +38,14 @@ class App extends Component {
     });
   })
 
-  togglePointerEvent = throttle((() => {
-    let timer;
-    return () => {
-      clearTimeout(timer);
-      document.body.style.pointerEvents = 'none';
-      timer = setTimeout(() => document.body.style.pointerEvents = 'auto', 100);
-    }
-  })(), 250)
-
   componentDidMount () {
     import('./articles.js').then(({ default: data }) => {
       this.setState({ data })
     });
-    window.addEventListener('scroll', this.togglePointerEvent);
   }
 
   componentWillUnmount() {
     this.observer.disconnect();
-    window.removeEventListener('scroll', this.togglePointerEvent);
   }
 
   onToggleNavbar = () => {
