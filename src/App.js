@@ -5,7 +5,7 @@ import Reason from './Reason'
 import Navbar from './components/Navbar'
 import Profile from './components/Profile'
 import Modal from './components/Modal'
-import './navbar-hidden.js';
+import './util/navbar-hidden.js';
 import 'intersection-observer';
 import PropTypes from 'prop-types';
 class App extends Component {
@@ -39,7 +39,7 @@ class App extends Component {
   })
 
   componentDidMount () {
-    import('./articles.js').then(({ default: data }) => {
+    import('./util/articles.js').then(({ default: data }) => {
       this.setState({ data })
     });
   }

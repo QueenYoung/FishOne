@@ -1,4 +1,4 @@
-
+// eslint-disable
 var webkitPrefix = 'WebkitAppearance' in document.documentElement.style ? '-webkit-' : '';
 
 var cursor = {

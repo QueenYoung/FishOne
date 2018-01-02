@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'My Font';
-  src: url("./fonts/JosefinSans-Italic.ttf")
+  src: url("../fonts/JosefinSans-Italic.ttf")
 }
 
 .title, .subtitle {
@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: 'Happy Font';
-  src: url("./fonts/LoveYaLikeASister.ttf");
+  src: url("../fonts/LoveYaLikeASister.ttf");
 }
 
 .hero, .hero .title, .hero .subtitle {
