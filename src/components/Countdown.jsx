@@ -44,7 +44,7 @@ class Countdown extends Component {
       <div className="navbar-item">
         {
           words ? <span>{words}</span>
-            : <div>
+            : <div style={{ fontFamily: 'monospace' }}>
                 <span role="img" aria-label="cake">🎂</span>
                 <span>{days}</span>:
                 <span>{hours.padStart(2, '0')}</span>:

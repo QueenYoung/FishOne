@@ -1,0 +1,82 @@
+$baseRadius: 125px;
+$scale: 2;
+$radius: $baseRadius * $scale;
+$aroundX: 35px;
+$aroundY: 50px;
+$offset: 60px;
+$animationDuration: 4s;
+$i: 1;
+$pos: ((-$aroundX, -$aroundY) ($aroundX, $aroundY) (-$offset, 0) ($offset, 0) (-$aroundX, $aroundY) ($aroundX, -$aroundY));
+
+@keyframes pluse {
+  from {
+    transform: scale(.15) rotate(180deg);
+  }
+  to {
+    transform: scale(1)
+  }
+}
+
+.watch-face {
+  &::after {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.75);
+    pointer-events: none;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: $radius;
+  width: $radius;
+
+  transform: translateZ(0);
+  will-change: transform;
+  animation: pluse $animationDuration cubic-bezier(.5,0,.5,1) alternate infinite;
+
+  .mask {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .8);
+    pointer-events: none;
+    content: "";
+  }
+
+  .circle {
+    border-radius: 50%;
+    height: $radius;
+    width: $radius;
+    position: absolute;
+    transform: translate(0, 0);
+    mix-blend-mode: screen;    
+
+    &:nth-child(even) {
+      background: #529ca0;
+    }
+    &:nth-child(odd) {
+      background: #61bea2;
+    }
+
+    @each $x, $y in $pos {
+      @keyframes circle-#{$i} {
+        from {
+          transform: translate(0,0);
+        }
+        to {
+          transform: translate($x * $scale, $y * $scale);
+        }
+      }
+      &:nth-child(#{$i}) {
+        animation: circle-#{$i} $animationDuration ease alternate infinite;
+      }
+      $i: $i + 1;
+    }
+  }
+}
