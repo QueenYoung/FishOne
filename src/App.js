@@ -32,6 +32,8 @@ class App extends Component {
       img.src = img.dataset.src;
       img.onerror = this.observer.unobserve(img);
       img.onload = () => {
+        img.classList.remove('placeholder');
+        img.classList.add('loaded');
         this.observer.unobserve(img);
       }
     });

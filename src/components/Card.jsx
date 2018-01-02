@@ -29,23 +29,25 @@ class Card extends Component {
   }
 
   render() {
-    const { pic, text, title, date, i, children, size, lazy } = this.props;
+    const { pic, text, title, date, i, children, size, lazy, thumbnail } = this.props;
     return (
       <div className="card">
         <div className="card-image">
           <figure className={`image ${size}`}>
             {lazy ?
-              <img
-                data-origin={pic}
-                ref={node => (this.img = node)}
-                data-src={pic}
-                alt="邱译莹"
-                data-action="zoom"
-                style={{
-                  objectFit: 'cover',
-                  objectPosition: 'top'
-                }}
-              />
+              <a href={pic}>
+                <img className="placeholder"
+                  ref={node => (this.img = node)}
+                  src={thumbnail}
+                  data-src={pic}
+                  alt="邱译莹"
+                  data-action="zoom"
+                  style={{
+                    objectFit: 'cover',
+                    objectPosition: 'top'
+                  }}
+                />
+              </a>
               : <img src={pic}
                 alt="邱译莹 Profile"
                 style={{ objectFit: 'cover', objectPosition: 'top' }} />
