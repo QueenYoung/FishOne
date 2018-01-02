@@ -1,6 +1,7 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import Logo from '../img/logo.jpg'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import Countdown from './Countdown';
+import Logo from '../img/logo.jpg';
 const NavBar = ({ onClick, isToggle }) => (
   <nav className="navbar is-dark is-fixed-top has-shadow">
     <div className="navbar-brand">
@@ -19,29 +20,34 @@ const NavBar = ({ onClick, isToggle }) => (
       </NavLink>
       <button
         className={`burger navbar-burger ${isToggle ? 'is-active' : ''}`}
-        onClick={onClick}
-      >
+        onClick={onClick}>
         <span />
         <span />
         <span />
       </button>
     </div>
     <div className={`navbar-menu ${isToggle ? 'is-active' : ''}`}>
-    <div className="navbar-start">
-      <NavLink to="/" className="navbar-item" exact activeClassName="is-active">
-        Introducation
-      </NavLink>
-      <NavLink
-        to="/reason"
-        className="navbar-item"
-        exact
-        activeClassName="is-active"
-      >
-        Reason
-      </NavLink>
+      <div className="navbar-start">
+        <NavLink
+          to="/"
+          className="navbar-item"
+          exact
+          activeClassName="is-active">
+          Introducation
+        </NavLink>
+        <NavLink
+          to="/reason"
+          className="navbar-item"
+          exact
+          activeClassName="is-active">
+          Reason
+        </NavLink>
+      </div>
+      <div className="navbar-end">
+        <Countdown />
       </div>
     </div>
   </nav>
-)
+);
 
-export default NavBar
+export default NavBar;
