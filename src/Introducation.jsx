@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from './components/Hero'
 import Card from './components/Card'
 
-import Zooming from 'zooming';
+import Zooming from './zooming.js';
 
 const zooming = new Zooming({
   bgColor: '#000',
