@@ -121,8 +121,7 @@ const data = {
   hero: {
     title: 'For You',
     subtitle: `It's a website that helps me remember the only girl I like in university`,
-    small: `Something is like a cloud of smoke but something will last forever. 
-Hope you can remember me after graduation.`
+    small: `Something is like a cloud of smoke but something will last forever. Hope you can be stronger.`
   }
 };
 export default data;
