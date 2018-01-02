@@ -5,6 +5,10 @@ class Card extends Component {
   static defaultProps = {
     lazy: true
   };
+  static contextTypes = {
+    observer: PropTypes.object
+  }
+
   static propTypes = {
     pic: PropTypes.string.isRequired,
     title: PropTypes.string,
@@ -15,8 +19,17 @@ class Card extends Component {
   };
 
   componentDidMount() {
-    const { zooming } = this.props;
+    const { zooming, lazy } = this.props;
     zooming && zooming.listen(this.img);
+
+    if (lazy) {
+      const { observer } = this.context;
+      observer.observe(this.img);
+    }
+  }
+
+  componentWillUnmount() {
+    this.context.observer.unobserve(this.img);
   }
 
   render() {
@@ -25,11 +38,11 @@ class Card extends Component {
       <div className="card">
         <div className="card-image">
           <figure className={`image ${size}`}>
+            {lazy ?
               <img
                 data-origin={pic}
                 ref={node => (this.img = node)}
-                data-src={lazy && pic}
-                src={lazy ? '' : pic}
+                data-src={pic}
                 alt="邱译莹"
                 data-action="zoom"
                 style={{
@@ -37,6 +50,10 @@ class Card extends Component {
                   objectPosition: 'top'
                 }}
               />
+              : <img src={pic}
+                alt="邱译莹 Profile"
+                style={{ objectFit: 'cover', objectPosition: 'top' }} />
+            }
           </figure>
         </div>
         <div className="card-content">

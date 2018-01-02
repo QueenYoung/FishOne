@@ -8,11 +8,23 @@ import Modal from './components/Modal'
 // import './navbar-hidden';
 import { throttle } from 'lodash';
 import 'intersection-observer';
+import PropTypes from 'prop-types';
 class App extends Component {
   state = {
     data: {},
     isNavbarToggle: false
   }
+
+  static childContextTypes = {
+    observer: PropTypes.object
+  }
+
+  getChildContext() {
+    return {
+      observer: this.observer
+    }
+  }
+
   observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
@@ -37,19 +49,13 @@ class App extends Component {
   componentDidMount () {
     import('./articles.js').then(({ default: data }) => {
       this.setState({ data })
-    }).then(() => Array.from(
-      document.querySelectorAll('img')).forEach(img => {
-        // this.setState(({ hasImgsLoad: prev }) => ({
-        //   hasImgsLoad: { ...prev, [img.dataset.src]: false }
-        // }));
-        this.observer.observe(img)
-      })
-    );
-    // window.addEventListener('scroll', this.togglePointerEvent);
+    });
+    window.addEventListener('scroll', this.togglePointerEvent);
   }
 
   componentWillUnmount() {
     this.observer.disconnect();
+    window.removeEventListener('scroll', this.togglePointerEvent);
   }
 
   onToggleNavbar = () => {
