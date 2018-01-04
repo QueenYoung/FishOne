@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sorry What?</title>
+  <link rel="stylesheet" href="../src/styles/watch.css">
+
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .swiper-container {
+      width: 50%;
+      height: 500px;
+      background: whitesmoke;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide .box {
+      width: 80%;
+      margin: 0 auto;
+      opacity: 0;
+    }
+
+    .box.active {
+      transform: translateX(-100px);
+      animation: 1s .6s cubic-bezier(0.39, 0.575, 0.565, 1) fadeIn both;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <h1 class="title">小邱同学年度报告</h1>
+      </div>
+      <div class="swiper-slide">
+        <div class="box">
+          <article class="media">
+            <div class="media-left">
+              <figure class="image is-64x64">
+                <img src="../src/img/logo.jpg" alt="an avatar">
+              </figure>
+            </div>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>鱼一</strong>
+                  <small>@fishfish_7</small>
+                  <br>
+                  <small class="has-text-grey">2017/3/10</small>
+                  <br>
+                   这一天你开始接触 JS
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="box">
+          <article class="media">
+            <div class="media-left">
+              <figure class="image is-64x64">
+                <img src="../src/img/logo.jpg" alt="an avatar">
+              </figure>
+            </div>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>鱼一</strong>
+                  <small>@fishfish_7</small>
+                  <br>
+                  <small class="has-text-grey">2017/4/10</small>
+                  <br>
+                   这一天你开始接触 JS
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="swiper-slide">3</div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <audio src="../src/Christmas.mp3" autoplay loop></audio>
+  <script src="./test.js" />
+</body>
+
+</html>
