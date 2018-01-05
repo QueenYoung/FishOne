@@ -16,6 +16,7 @@ class Birthday extends Component {
   toggleModal = () => {
     if (this.state.canRemoveModal) {
       document.querySelector('.icon.has-text-danger').classList.remove('is-active');
+      document.querySelector('.navbar').style.opacity = 1;
       unmountComponentAtNode(document.querySelector('#happy'));
     }
   }

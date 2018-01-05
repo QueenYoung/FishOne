@@ -17,9 +17,11 @@ class Countdown extends Component {
     }, 1000);
   }
 
-
-  toggle = async () => {
+  toggle = async ({ target }) => {
+    target.classList.add('is-loading');
     const module = await import('../Birthday');
+    target.classList.remove('is-loading');
+    document.querySelector('.navbar').style.opacity = 0;
     const Birthday = module.default;
     render(<Birthday/>, document.querySelector('#happy'));
   }
@@ -51,9 +53,10 @@ class Countdown extends Component {
     return (
       <div className="navbar-item">
         {
-          words ? <span onClick={this.toggle}
-          style={{cursor: 'pointer'}}
-          >{words}</span>
+          words ? <button type="button"
+            onClick={this.toggle}
+            className="button is-light"
+          >{words}</button>
             : <div style={{ fontFamily: 'monospace' }}>
                 <span role="img" aria-label="cake">🎂</span>
                 <span>{days}</span>:

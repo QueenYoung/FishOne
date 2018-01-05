@@ -42,7 +42,7 @@ const SwiperContainer = ({ words = [], active=[] }) => (
       }
     </div>
     <div className="swiper-pagination" />
-      <div className="icon has-text-danger is-active">
+      <div className="icon has-text-danger is-active" onClick={() => console.log(1)}>
         <span role="img" aria-label="music">🎶</span>
       </div>
   </div>
