@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { render } from 'react-dom';
 
 class Countdown extends Component {
   state = {
@@ -16,6 +17,13 @@ class Countdown extends Component {
     }, 1000);
   }
 
+
+  toggle = async () => {
+    const module = await import('../Birthday');
+    const Birthday = module.default;
+    render(<Birthday/>, document.querySelector('#happy'));
+  }
+
   componentWillUnmount() {
     clearInterval(this.updateTimer);
   }
@@ -24,7 +32,7 @@ class Countdown extends Component {
     const remaining = (Date.parse(this.endTime) - Date.now()) / 1000;
     if (remaining <= 0) {
       return {
-        words: '生日快乐!!! 🍰🎂🐸'
+        words: '生日快乐!! 🎂 快点我!'
       }
     }
     const seconds = Math.trunc(remaining) % 60 + '';
@@ -43,7 +51,9 @@ class Countdown extends Component {
     return (
       <div className="navbar-item">
         {
-          words ? <span>{words}</span>
+          words ? <span onClick={this.toggle}
+          style={{cursor: 'pointer'}}
+          >{words}</span>
             : <div style={{ fontFamily: 'monospace' }}>
                 <span role="img" aria-label="cake">🎂</span>
                 <span>{days}</span>:

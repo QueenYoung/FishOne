@@ -11,9 +11,6 @@ const CardContent = ({ title, text }) => (
 );
 
 class Card extends Component {
-  static defaultProps = {
-    lazy: true
-  };
   static contextTypes = {
     observer: PropTypes.object
   }
@@ -22,20 +19,21 @@ class Card extends Component {
     pic: PropTypes.string,
     title: PropTypes.string,
     text: PropTypes.string,
-    zooming: PropTypes.object,
-    footer: PropTypes.object
+    zooming: PropTypes.object
   };
 
   componentDidMount() {
     const { zooming } = this.props;
-    if (!this.img || !zooming) return;
-    zooming.listen(this.img);
+    const { observer } = this.context;
+    if (!this.img) return;
+    observer && observer.observe(this.img);
+    zooming && zooming.listen(this.img);
   }
 
   render() {
-    const { pic, text, title, children, size, thumbnail, zooming } = this.props;
-    const lazy = !!zooming;
-    const coverStyle = { objectFit: 'cover', objectPosition: 'top' };
+    const { pic, text, title, children, size, thumbnail } = this.props;
+    const lazy = !!this.context.observer; 
+    const coverStyle = { objectFit: 'cover', objectPosition: '20%' };
     return (
       <div className="card">
         {pic && <div className="card-image">

@@ -10,6 +10,7 @@
     "bulma-divider": "^0.1.0",
     "bulma-pageloader": "^0.1.0",
     "bulma-timeline": "^1.1.2",
+    "font-awesome": "^4.7.0",
     "intersection-observer": "^0.5.0",
     "react": "~16.2",
     "react-content-loader": "^1.7.3",

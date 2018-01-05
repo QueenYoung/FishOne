@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import Card from '../Card';
 import Media from '../Media';
+import WatchFace from './WatchFace';
+import 'font-awesome/css/font-awesome.min.css';
 import './summary.css';
 import zip from 'lodash/zip';
 
@@ -31,7 +33,8 @@ const SwiperContainer = ({ words = [], active=[] }) => (
   <div className="swiper-container">
     <div className="swiper-wrapper">
       <div className="swiper-slide is-active">
-       <h1 className="title">???</h1>
+       <h1 className="title">小邱同学年度总结</h1>
+       <WatchFace />
       </div>  
       {
         zip(words, active).map(([word, status], i) => (
@@ -40,6 +43,9 @@ const SwiperContainer = ({ words = [], active=[] }) => (
       }
     </div>
     <div className="swiper-pagination" />
+      <div className="icon has-text-danger is-active">
+        <i className="fa fa-music" />
+      </div>
   </div>
 );
 

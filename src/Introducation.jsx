@@ -3,13 +3,6 @@ import Hero from './components/Hero';
 import Card from './components/Card';
 import 'bulma-timeline/bulma-timeline.min.css';
 
-import Zooming from './util/zooming.js';
-
-const zooming = new Zooming({
-  bgColor: '#000',
-  bgOpacity: 0.8,
-  enableGrab: false
-});
 
 const Timeline = ({ date, newYear, children }) => (
   <Fragment>
@@ -28,7 +21,7 @@ const Timeline = ({ date, newYear, children }) => (
   </Fragment>
 );
 
-const Introducation = ({ hero, selfies = [], articles = [] }) => (
+const Introducation = ({ hero, selfies = [], articles = [], zooming }) => (
   <Fragment>
     <Hero {...hero} />
     <section className="section">
@@ -37,8 +30,7 @@ const Introducation = ({ hero, selfies = [], articles = [] }) => (
       <div className="columns">
         {selfies.map((selfies, i) => (
           <div className="column" key={i}>
-            <Card {...selfies} zooming={zooming}>
-            </Card>  
+            <Card {...selfies} zooming={zooming} />
           </div>
         ))}
       </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Countdown from './Countdown';
 import Logo from '../img/logo.jpg';
-const NavBar = ({ onClick, isToggle }) => (
+const NavBar = ({ onClick, isToggle, zooming }) => (
   <nav className="navbar is-dark is-fixed-top has-shadow">
     <div className="navbar-brand">
       <NavLink className="navbar-item" to="/profile">
@@ -44,7 +44,7 @@ const NavBar = ({ onClick, isToggle }) => (
         </NavLink>
       </div>
       <div className="navbar-end">
-        <Countdown />
+        <Countdown zooming={zooming}/>
       </div>
     </div>
   </nav>

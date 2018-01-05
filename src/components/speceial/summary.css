@@ -8,11 +8,29 @@
   }
 }
 
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
 .swiper-container {
-  width: 50%;
   max-height: 90vh;
-  margin: auto;
   background: whitesmoke;
+}
+
+.swiper-container .icon {
+  position: absolute;
+  top: 1.25em;
+  right: .75em;
+  font-size: 2em;
+}
+
+.swiper-container .icon.is-active {
+  animation: rotate 5s linear infinite;
 }
 
 .swiper-slide {

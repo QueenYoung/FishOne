@@ -8,6 +8,16 @@ import Modal from './components/Modal'
 import './util/navbar-hidden.js';
 import 'intersection-observer';
 import PropTypes from 'prop-types';
+
+import Zooming from './util/zooming.js';
+
+const zooming = new Zooming({
+  bgColor: '#000',
+  bgOpacity: 0.8,
+  enableGrab: false
+});
+
+
 class App extends Component {
   state = {
     data: {},
@@ -71,7 +81,10 @@ class App extends Component {
     return (
       <BrowserRouter >
         <div className="app">
-          <Navbar onClick={this.onToggleNavbar} isToggle={isNavbarToggle}/>
+          <Navbar
+            onClick={this.onToggleNavbar}
+            isToggle={isNavbarToggle}
+          />
           <Route
             path="/profile"
             render={({ history }) => (
@@ -84,7 +97,7 @@ class App extends Component {
             <Switch>
               <Route path="/reason" component={Reason}/>
               <Route path="/" render={
-                () => <Introducation {...data} />
+                () => <Introducation {...data} zooming={zooming} />
               } />
             </Switch>
           </main>
