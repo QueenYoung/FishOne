@@ -13,7 +13,7 @@ const CardContent = ({ title, text }) => (
 class Card extends Component {
   static contextTypes = {
     observer: PropTypes.object
-  }
+  };
 
   static propTypes = {
     pic: PropTypes.string,
@@ -31,31 +31,27 @@ class Card extends Component {
   }
 
   render() {
-    const { pic, text, title, children, size, thumbnail } = this.props;
-    const lazy = !!this.context.observer; 
+    const { pic, text, title, children, size, thumbnail, isSwiper } = this.props;
     const coverStyle = { objectFit: 'cover', objectPosition: '20%' };
     return (
       <div className="card">
-        {pic && <div className="card-image">
-          <figure className={`image ${size}`}>
-            {lazy ?
+        {pic && (
+          <div className="card-image">
+            <figure className={`image ${size}`}>
               <a href={pic}>
-                <img className="placeholder"
+                <img
+                  className={isSwiper ? 'swiper-lazy' : 'placeholder'}
                   ref={node => (this.img = node)}
-                  src={thumbnail}
+                  src={thumbnail || ''}
                   data-src={pic}
                   alt="邱译莹"
                   data-action="zoom"
                   style={coverStyle}
                 />
               </a>
-              : <img src={pic}
-                alt="邱译莹 Profile"
-                style={coverStyle} />
-            }
-          </figure>
-        </div>
-        }
+            </figure>
+          </div>
+        )}
         <div className="card-content">
           {children || <CardContent title={title} text={text} />}
         </div>

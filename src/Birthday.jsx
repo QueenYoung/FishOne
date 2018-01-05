@@ -7,7 +7,7 @@ import SwiperContainer from './components/speceial/SwiperItem';
 
 class Birthday extends Component {
   state = { 
-    pageLoading: false,
+    pageLoading: true,
     words: [],
     canRemoveModal: false
   }
@@ -38,6 +38,7 @@ class Birthday extends Component {
       direction: 'vertical',
       slidesPerview: 1,
       mousewheel: true,
+      lazy: true,
       pagination: {
         el: '.swiper-pagination',
         dynamicBullets: true,

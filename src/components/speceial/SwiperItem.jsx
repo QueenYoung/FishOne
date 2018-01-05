@@ -7,7 +7,7 @@ import zip from 'lodash/zip';
 
 const SwiperItem = ({ text, img = '', active }) => (
   <div className={`swiper-slide ${active ? 'is-active' : ''}`}>
-    <Card pic={img.pic} size="is-4by3">
+    <Card pic={img.pic} size="is-4by3" isSwiper>
       {img.pic && <Media title="鱼一" subtitle="@fishfish_7" />}
       {text && (
         <Fragment>
