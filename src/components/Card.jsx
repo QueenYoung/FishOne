@@ -38,17 +38,16 @@ class Card extends Component {
         {pic && (
           <div className="card-image">
             <figure className={`image ${size}`}>
-              <a href={pic}>
-                <img
-                  className={isSwiper ? 'swiper-lazy' : 'placeholder'}
-                  ref={node => (this.img = node)}
-                  src={thumbnail || ''}
-                  data-src={pic}
-                  alt="邱译莹"
-                  data-action="zoom"
-                  style={coverStyle}
-                />
-              </a>
+              <img
+                className={isSwiper ? 'swiper-lazy' : 'placeholder'}
+                ref={node => (this.img = node)}
+                src={thumbnail || ''}
+                data-src={pic}
+                data-origin={pic}
+                alt="邱译莹"
+                data-action="zoom"
+                style={coverStyle}
+              />
             </figure>
           </div>
         )}
