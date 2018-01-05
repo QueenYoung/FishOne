@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { unmountComponentAtNode } from 'react-dom';
 import 'bulma-pageloader/bulma-pageloader.min.css';
 import 'swiper/dist/css/swiper.min.css';
-import Swiper from 'swiper';
+import Swiper from 'swiper/dist/js/swiper.min';
 import SwiperContainer from './components/speceial/SwiperItem';
 
 class Birthday extends Component {

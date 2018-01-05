@@ -36,6 +36,10 @@ import $c1210 from '../img/compressed/12-10.jpg';
 const data = {
   articles: [
     {
+      date: '18/1/6',
+      text: '20 岁咯🎂🍰🎉!!',
+    },
+    {
       date: '17/12/10',
       text: '江湖惊现双马尾小邱!',
       pic: $1210,

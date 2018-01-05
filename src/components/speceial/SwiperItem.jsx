@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import Card from '../Card';
 import Media from '../Media';
 import WatchFace from './WatchFace';
-import 'font-awesome/css/font-awesome.min.css';
 import './summary.css';
 import zip from 'lodash/zip';
 
@@ -44,7 +43,7 @@ const SwiperContainer = ({ words = [], active=[] }) => (
     </div>
     <div className="swiper-pagination" />
       <div className="icon has-text-danger is-active">
-        <i className="fa fa-music" />
+        <span role="img" aria-label="music">🎶</span>
       </div>
   </div>
 );
