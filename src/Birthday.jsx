@@ -15,7 +15,6 @@ class Birthday extends Component {
 
   toggleModal = () => {
     if (this.state.canRemoveModal) {
-      document.querySelector('.icon.has-text-danger').classList.remove('is-active');
       document.querySelector('.navbar').style.opacity = 1;
       unmountComponentAtNode(document.querySelector('#happy'));
     }
@@ -57,6 +56,8 @@ class Birthday extends Component {
       if (document.querySelector('.swiper-slide.swiper-slide-active:last-child') || 
           !document.querySelector('.swiper-slide-next')) {
         this.audio.pause();
+        document.querySelector('.icon.has-text-danger')
+          .classList.remove('is-active');
         this.setState({ canRemoveModal: true });
       }
       pos += 1;
