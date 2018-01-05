@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Hero from './components/Hero'
 import Card from './components/Card'
+import 'bulma-timeline/bulma-timeline.min.css';
 
 import Zooming from './util/zooming.js';
 
@@ -10,8 +11,26 @@ const zooming = new Zooming({
   enableGrab: false,
 });
 
+
+const Timeline = ({ date, newYear, children }) => (
+  <Fragment>
+    {newYear && (
+      <header className="timeline-header">
+        <span className="tag is-danger is-medium">{newYear}</span>
+      </header>)
+    }
+    <div className="timeline-item">
+      <div className="timeline-marker is-warning"></div>
+      <div className="timeline-content">
+        <p className="heading">{date}</p>
+        {children}
+      </div>
+    </div>
+  </Fragment>
+);
+
 const Introducation = ({ hero, selfies = [], articles = [] }) => (
-  <div>
+  <Fragment>
     <Hero {...hero}/>
     <section className="section">
       <hr/>
@@ -27,20 +46,23 @@ const Introducation = ({ hero, selfies = [], articles = [] }) => (
       </div>
       <hr/>
       <h2 className="title">Timeline</h2>
-      <section className="timeline container">
+      <section className="timeline container is-centered">
+        <header className="timeline-header">
+          <span className="tag is-large is-light">Start</span>
+        </header>
         {
-          articles.map((article, i) => (
-            <div className="timeline-item" key={article.date}>
-              <div className="timeline-img"/>
-              <div className="timeline-content">
-                <Card { ...article } i={i} lazy zooming={zooming} />
-              </div>
-            </div>
+          articles.map((article) => (
+            <Timeline date={article.date} key={article.date} newYear={article.newYear}>
+              <Card {...article} lazy zooming={zooming} />
+            </Timeline>
           ))
         }
+        <footer className="timeline-header">
+          <span className="tag is-large is-light">End</span>
+        </footer>
       </section>
     </section>
-  </div>
+  </Fragment>
 );
 
 export default Introducation;

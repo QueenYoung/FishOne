@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Tag from './Tag';
 class Card extends Component {
   static defaultProps = {
     lazy: true
@@ -13,7 +12,6 @@ class Card extends Component {
     pic: PropTypes.string.isRequired,
     title: PropTypes.string,
     text: PropTypes.string,
-    i: PropTypes.number,
     lazy: PropTypes.bool,
     zooming: PropTypes.object
   };
@@ -29,7 +27,7 @@ class Card extends Component {
   }
 
   render() {
-    const { pic, text, title, date, i, children, size, lazy, thumbnail } = this.props;
+    const { pic, text, title, children, size, lazy, thumbnail } = this.props;
     return (
       <div className="card">
         <div className="card-image">
@@ -60,7 +58,6 @@ class Card extends Component {
               {title && <h3 className="title">{title}</h3>}
               <div className="content">
                 <p>{text}</p>
-                {date && <Tag invert={i % 2}>{date}</Tag>}
               </div>
             </div>
           )}
