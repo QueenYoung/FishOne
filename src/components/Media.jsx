@@ -1,13 +1,17 @@
 import React from 'react';
-import Image from './Image'
-const Media = ({ src, title, subtitle }) => (
+import Image from './Image';
+import src from '../img/logo.jpg';
+import 'bulma-divider/bulma-divider.min.css';
+const Media = ({ title, subtitle, children }) => (
   <div className="media">
     <div className="media-left">
-      <Image size='is-48x48' src={src}/>
+      <Image size="is-64x64" src={src} />
     </div>
+
     <div className="media-content">
-      <p className="title is-4">{title}</p>
-      <p className="subtitle is-6">{subtitle}</p>
+      <p className="title">{title}</p>
+      <p className="subtitle">{subtitle}</p>
+      {children}
     </div>
   </div>
 );

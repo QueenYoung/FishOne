@@ -7,6 +7,7 @@
     "@types/react": "^16.0.25",
     "@types/react-dom": "^16.0.3",
     "bulma": "^0.6.1",
+    "bulma-divider": "^0.1.0",
     "bulma-pageloader": "^0.1.0",
     "bulma-timeline": "^1.1.2",
     "intersection-observer": "^0.5.0",

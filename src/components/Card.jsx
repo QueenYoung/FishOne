@@ -1,5 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
+const CardContent = ({ title, text }) => (
+  <div>
+    {title && <h3 className="title">{title}</h3>}
+    <div className="content">
+      <p>{text}</p>
+    </div>
+  </div>
+);
+
 class Card extends Component {
   static defaultProps = {
     lazy: true
@@ -13,10 +23,12 @@ class Card extends Component {
     title: PropTypes.string,
     text: PropTypes.string,
     lazy: PropTypes.bool,
-    zooming: PropTypes.object
+    zooming: PropTypes.object,
+    footer: PropTypes.object
   };
 
   componentDidMount() {
+    if (!this.img) return;
     const { zooming, lazy } = this.props;
     zooming && zooming.listen(this.img);
 
@@ -30,7 +42,7 @@ class Card extends Component {
     const { pic, text, title, children, size, lazy, thumbnail } = this.props;
     return (
       <div className="card">
-        <div className="card-image">
+        {pic && <div className="card-image">
           <figure className={`image ${size}`}>
             {lazy ?
               <a href={pic}>
@@ -52,15 +64,9 @@ class Card extends Component {
             }
           </figure>
         </div>
+        }
         <div className="card-content">
-          {children || (
-            <div>
-              {title && <h3 className="title">{title}</h3>}
-              <div className="content">
-                <p>{text}</p>
-              </div>
-            </div>
-          )}
+          {children || <CardContent title={title} text={text} />}
         </div>
       </div>
     );

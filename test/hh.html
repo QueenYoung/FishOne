@@ -21,7 +21,7 @@
 
     .swiper-container {
       width: 50%;
-      height: 500px;
+      max-height: 80%;
       background: whitesmoke;
     }
 
@@ -31,13 +31,13 @@
       align-items: center;
     }
 
-    .swiper-slide .box {
-      width: 80%;
-      margin: 0 auto;
+    .swiper-slide .card {
+      max-width: 80%;
+      max-height: 100%;
       opacity: 0;
     }
 
-    .box.active {
+    .card.active {
       transform: translateX(-100px);
       animation: 1s .6s cubic-bezier(0.39, 0.575, 0.565, 1) fadeIn both;
     }
@@ -48,29 +48,51 @@
   <div class="swiper-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <h1 class="title">小邱同学年度报告</h1>
+        <!-- <h1 class="title">小邱同学年度报告</h1> -->
+        <h1 class="title">???</h1>
       </div>
       <div class="swiper-slide">
-        <div class="box">
-          <article class="media">
-            <div class="media-left">
-              <figure class="image is-64x64">
-                <img src="../src/img/logo.jpg" alt="an avatar">
-              </figure>
-            </div>
-            <div class="media-content">
-              <div class="content">
-                <p>
-                  <strong>鱼一</strong>
-                  <small>@fishfish_7</small>
-                  <br>
-                  <small class="has-text-grey">2017/3/10</small>
-                  <br>
-                   这一天你开始接触 JS
-                </p>
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">John Smith</p>
+                <p class="subtitle is-6">@johnsmith</p>
               </div>
             </div>
-          </article>
+        
+            <div class="content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+              <a>@bulmaio</a>.
+              <a href="#">#css</a>
+              <a href="#">#responsive</a>
+              <br>
+              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="card-content">
+            <p class="title">“这一年你听得最多的歌是”</p>
+            <p class="subtitle">网易云音乐</p>
+          </div>
+          <footer class="card-footer">
+            <p class="card-footer-item">
+              <span>Listen again <a href="#">不想去猜</a></span>
+            </p>
+          </footer>
         </div>
       </div>
       <div class="swiper-slide">
@@ -96,7 +118,6 @@
           </article>
         </div>
       </div>
-      <div class="swiper-slide">3</div>
     </div>
     <div class="swiper-pagination"></div>
   </div>
