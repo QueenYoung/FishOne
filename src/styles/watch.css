@@ -3,16 +3,7 @@
     transform: scale(0.15) rotate(180deg); }
   to {
     transform: scale(1); } }
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90vh; }
-
 .watch-face {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 250px;
   width: 250px;
   transform: translateZ(0);

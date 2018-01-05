@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     direction: 'vertical',
     slidesPerview: 1,
     mousewheel: true,
-    effect: 'coverflow',
     pagination: {
       el: '.swiper-pagination',
       dynamicBullets: true

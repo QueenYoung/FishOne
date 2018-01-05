@@ -19,27 +19,23 @@ class Card extends Component {
   }
 
   static propTypes = {
-    pic: PropTypes.string.isRequired,
+    pic: PropTypes.string,
     title: PropTypes.string,
     text: PropTypes.string,
-    lazy: PropTypes.bool,
     zooming: PropTypes.object,
     footer: PropTypes.object
   };
 
   componentDidMount() {
-    if (!this.img) return;
-    const { zooming, lazy } = this.props;
-    zooming && zooming.listen(this.img);
-
-    if (lazy) {
-      const { observer } = this.context;
-      observer.observe(this.img);
-    }
+    const { zooming } = this.props;
+    if (!this.img || !zooming) return;
+    zooming.listen(this.img);
   }
 
   render() {
-    const { pic, text, title, children, size, lazy, thumbnail } = this.props;
+    const { pic, text, title, children, size, thumbnail, zooming } = this.props;
+    const lazy = !!zooming;
+    const coverStyle = { objectFit: 'cover', objectPosition: 'top' };
     return (
       <div className="card">
         {pic && <div className="card-image">
@@ -52,15 +48,12 @@ class Card extends Component {
                   data-src={pic}
                   alt="邱译莹"
                   data-action="zoom"
-                  style={{
-                    objectFit: 'cover',
-                    objectPosition: 'top'
-                  }}
+                  style={coverStyle}
                 />
               </a>
               : <img src={pic}
                 alt="邱译莹 Profile"
-                style={{ objectFit: 'cover', objectPosition: 'top' }} />
+                style={coverStyle} />
             }
           </figure>
         </div>

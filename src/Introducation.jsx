@@ -37,7 +37,7 @@ const Introducation = ({ hero, selfies = [], articles = [] }) => (
       <div className="columns">
         {selfies.map((selfies, i) => (
           <div className="column" key={i}>
-            <Card {...selfies} lazy zooming={zooming}>
+            <Card {...selfies} zooming={zooming}>
             </Card>  
           </div>
         ))}
@@ -53,7 +53,7 @@ const Introducation = ({ hero, selfies = [], articles = [] }) => (
             date={article.date}
             key={article.date}
             newYear={article.newYear}>
-            <Card {...article} lazy zooming={zooming} />
+            <Card {...article} zooming={zooming} />
           </Timeline>
         ))}
         <footer className="timeline-header">

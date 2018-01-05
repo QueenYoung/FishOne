@@ -17,13 +17,6 @@ $pos: ((-$aroundX, -$aroundY) ($aroundX, $aroundY) (-$offset, 0) ($offset, 0) (-
   }
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
-}
-
 .watch-face {
   &::after {
     position: fixed;
@@ -34,10 +27,6 @@ body {
     background: rgba(0,0,0,.75);
     pointer-events: none;
   }
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   height: $radius;
   width: $radius;
 
