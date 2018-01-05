@@ -3,9 +3,9 @@
   src: url("../fonts/JosefinSans-Italic.ttf")
 }
 
-.title, .subtitle {
+/* .title, .subtitle {
   font-family: 'My Font';
-}
+} */
 
 @font-face {
   font-family: 'Happy Font';

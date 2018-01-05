@@ -10,7 +10,7 @@ const SwiperItem = ({ text, img = '', active }) => (
       {img.pic && <Media title="鱼一" subtitle="@fishfish_7" />}
       {text && (
         <Fragment>
-          <p className="title">{text.title}</p>
+          <p className="title">{`“${text.title}”`}</p>
           <p className="subtitle">{text.subtitle}</p>
         </Fragment>
       )}
@@ -19,7 +19,7 @@ const SwiperItem = ({ text, img = '', active }) => (
           <Fragment>
             {img.content}
             <br/>
-            <time>{img.datatime}</time>
+            <time><small className="has-text-grey-light">{img.datetime}</small></time>
           </Fragment>
         )
       }
