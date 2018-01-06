@@ -31,7 +31,15 @@ class Card extends Component {
   }
 
   render() {
-    const { pic, text, title, children, size, thumbnail, isSwiper } = this.props;
+    const {
+      pic,
+      text,
+      title,
+      children,
+      size,
+      thumbnail,
+      isSwiper
+    } = this.props;
     const coverStyle = { objectFit: 'cover', objectPosition: '20%' };
     return (
       <div className="card">
@@ -41,8 +49,8 @@ class Card extends Component {
               <img
                 className={isSwiper ? 'swiper-lazy' : 'placeholder'}
                 ref={node => (this.img = node)}
-                src={thumbnail || ''}
-                data-src={pic}
+                src="https://bulma.io/images/placeholders/640x480.png"
+                data-src={thumbnail || pic}
                 data-origin={pic}
                 alt="邱译莹"
                 data-action="zoom"

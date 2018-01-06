@@ -21,13 +21,11 @@ class Birthday extends Component {
   }
 
   async componentDidMount() {
-    setTimeout(() => {
-      this.setState(({ pageLoading }) => ({ pageLoading: false }));
-    }, 3000);
     const [module, bgm] = await Promise.all([
       import('./components/speceial/words.js'),
-      import('./Christmas.mp3')
+      import('./bgm.mp3')
     ]);
+    this.setState(({ pageLoading }) => ({ pageLoading: false }));
     this.audio.src = bgm;
     this.setState({
       words: module.default,
@@ -73,7 +71,7 @@ class Birthday extends Component {
           justifyContent: 'center',
           alignItems: 'center'
         }}>
-          <span className="title">精彩内容正在准备中! </span>
+          <span className="title">精彩内容正在准备! 玩命加载中ヾ(=･ω･=)o </span>
         </div>
 
         <div className={`modal is-active`}>
