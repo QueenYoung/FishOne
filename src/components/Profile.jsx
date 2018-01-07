@@ -3,8 +3,13 @@ import cardImg from '../img/xiaoqiu.jpg'
 import Media from './Media'
 import Card from './Card'
 import Level from './Level'
+import Modal from './Modal';
+import { withRouter } from 'react-router-dom';
 
+
+const M = withRouter(Modal);
 const Profile = () => (
+  <M>
   <Card pic={cardImg} size="is-4by3" lazy={false}>
     <Media title="邱译莹" subtitle="@fishfish_7" />
     <Level
@@ -17,6 +22,7 @@ const Profile = () => (
     />
     <div className="content"></div>
   </Card>
+  </M>
 )
 
 export default Profile

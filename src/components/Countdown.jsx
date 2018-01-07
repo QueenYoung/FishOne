@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { render } from 'react-dom';
 
 class Countdown extends Component {

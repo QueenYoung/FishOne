@@ -1,22 +1,14 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Introducation from './Introducation';
-import Reason from './Reason'
+import AsyncComponent from './components/AsyncComponent';
 import Navbar from './components/Navbar'
-import Profile from './components/Profile'
-import Modal from './components/Modal'
 import './util/navbar-hidden.js';
 import 'intersection-observer';
 import PropTypes from 'prop-types';
 
-import Zooming from './util/zooming.js';
-
-const zooming = new Zooming({
-  bgColor: '#000',
-  bgOpacity: 0.8,
-  enableGrab: false
-});
-
+const Profile = AsyncComponent(() => import('./components/Profile'));
+const Reason = AsyncComponent(() => import('./Reason'));
+const Introducation = AsyncComponent(() => import('./Introducation'));
 
 class App extends Component {
   state = {
@@ -87,18 +79,12 @@ class App extends Component {
           />
           <Route
             path="/profile"
-            render={({ history }) => (
-              <Modal history={history}>
-                <Profile />
-              </Modal>
-            )}
+            component={Profile}
           />
           <main style={this.pushdown(isNavbarToggle)}>
             <Switch>
               <Route path="/reason" component={Reason}/>
-              <Route path="/" render={
-                () => <Introducation {...data} zooming={zooming} />
-              } />
+              <Route path="/" render={ () => <Introducation {...data} /> } />
             </Switch>
           </main>
         </div>

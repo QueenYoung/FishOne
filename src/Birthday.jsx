@@ -36,15 +36,32 @@ class Birthday extends Component {
       .then(stream => new Response(stream))
       .then(res => res.blob())
       .then(blob => URL.createObjectURL(blob))
-      .then(src => this.audio.src = src)
+      .then(src => (this.audio.src = src))
       .catch(console.log);
   };
+
+  mySwiper = new Swiper('.swiper-container', {
+    direction: 'vertical',
+    slidesPerview: 1,
+    mousewheel: true,
+    lazy: true,
+    pagination: {
+      el: '.swiper-pagination',
+      dynamicBullets: true,
+      click: true
+    }
+  });
+
   toggleModal = () => {
     if (this.state.canRemoveModal) {
       document.querySelector('.navbar').style.opacity = 1;
       unmountComponentAtNode(document.querySelector('#happy'));
     }
   };
+
+  componentWillUnmount() {
+    this.mySwiper.off('scroll');
+  }
 
   async componentDidMount() {
     this.fetchAudioStream();
@@ -57,20 +74,11 @@ class Birthday extends Component {
       words: module.default,
       active: Array(module.default.length).fill(false)
     });
-    const mySwiper = new Swiper('.swiper-container', {
-      direction: 'vertical',
-      slidesPerview: 1,
-      mousewheel: true,
-      lazy: true,
-      pagination: {
-        el: '.swiper-pagination',
-        dynamicBullets: true,
-        click: true
-      }
-    });
+
+
 
     let pos = 0;
-    mySwiper.on('scroll', event => {
+    this.mySwiper.on('scroll', event => {
       this.setState(({ active }) => ({
         active: active.map((status, i) => (i === pos ? true : status))
       }));

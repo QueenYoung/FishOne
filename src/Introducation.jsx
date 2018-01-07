@@ -2,6 +2,12 @@ import React, { Fragment } from 'react';
 import Hero from './components/Hero';
 import Card from './components/Card';
 import 'bulma-timeline/bulma-timeline.min.css';
+import Zooming from './util/zooming.js';
+const zooming = new Zooming({
+  bgColor: '#000',
+  bgOpacity: 0.8,
+  enableGrab: false
+});
 
 
 const Timeline = ({ date, newYear, children }) => (
@@ -21,7 +27,7 @@ const Timeline = ({ date, newYear, children }) => (
   </Fragment>
 );
 
-const Introducation = ({ hero, selfies = [], articles = [], zooming }) => (
+const Introducation = ({ hero, selfies = [], articles = [] }) => (
   <Fragment>
     <Hero {...hero} />
     <section className="section">
