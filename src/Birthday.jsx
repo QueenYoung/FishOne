@@ -39,29 +39,13 @@ class Birthday extends Component {
       .then(src => (this.audio.src = src))
       .catch(console.log);
   };
-
-  mySwiper = new Swiper('.swiper-container', {
-    direction: 'vertical',
-    slidesPerview: 1,
-    mousewheel: true,
-    lazy: true,
-    pagination: {
-      el: '.swiper-pagination',
-      dynamicBullets: true,
-      click: true
-    }
-  });
-
   toggleModal = () => {
     if (this.state.canRemoveModal) {
       document.querySelector('.navbar').style.opacity = 1;
+      this.mySwiper.off('scroll');
       unmountComponentAtNode(document.querySelector('#happy'));
     }
   };
-
-  componentWillUnmount() {
-    this.mySwiper.off('scroll');
-  }
 
   async componentDidMount() {
     this.fetchAudioStream();
@@ -74,8 +58,17 @@ class Birthday extends Component {
       words: module.default,
       active: Array(module.default.length).fill(false)
     });
-
-
+    this.mySwiper = new Swiper('.swiper-container', {
+      direction: 'vertical',
+      slidesPerview: 1,
+      mousewheel: true,
+      lazy: true,
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+        click: true
+      }
+    });
 
     let pos = 0;
     this.mySwiper.on('scroll', event => {
