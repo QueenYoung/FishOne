@@ -32,12 +32,16 @@ import $1118 from '../img/11-18.jpg';
 import $c1118 from '../img/compressed/11-18.jpg';
 import $1210 from '../img/12-10.jpg';
 import $c1210 from '../img/compressed/12-10.jpg';
+import $0116 from '../img/0106.jpg';
+import $c0106 from '../img/compressed/0106.jpg';
 
 const data = {
   articles: [
     {
       date: '18/1/6',
       text: '20 岁咯🎂🍰🎉!!',
+      pic: $0116,
+      thumbnail: $c0106
     },
     {
       date: '17/12/10',

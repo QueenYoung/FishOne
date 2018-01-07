@@ -22,7 +22,7 @@ export default [
   },
   {
     text: {
-      title: '暑假, 你去了厦门, 去了大理, 还去了成都.',
+      title: '暑假, 你去了厦门, 去了大理, 还去了成都. 你离丹麦可能只差三年了',
       subtitle: '环游世界'
     }
   },
@@ -76,6 +76,12 @@ export default [
     }
   },
   {
+    text: {
+      title: '十二月, 你参加了科技月月评, 拿到了三等奖',
+      subtitle: 'Hopes the code can change your life'
+    }
+  },
+  {
     img: {
       pic: $1207,
       content: '没有通宵写过代码的人, 不是真正的仙女🧝🏻‍♀️',
@@ -100,8 +106,8 @@ export default [
   {
     text: {
       title:
-        '因为我对行业也是在不断的认识中, 所以也会不断地改变自己想法. 你应该忠于自己的想法, 但是也别太生我的气',
-      subtitle: '不要告白'
+        '2017 年应该是你的收获之年, 两次一等奖学金, 入党积极分子, 慢慢喜欢上了编程… 2018 年可能就能找到你的盖世英雄咯',
+      subtitle: 'Speed Year'
     }
   }, {
     img: {
