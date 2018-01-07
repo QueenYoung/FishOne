@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
+import { Link } from 'react-router-dom';
 
 class Countdown extends Component {
   state = {
@@ -17,13 +17,10 @@ class Countdown extends Component {
     }, 1000);
   }
 
-  toggle = async ({ target }) => {
+  toggle = ({ target }) => {
     target.classList.add('is-loading');
-    const module = await import('../Birthday');
     target.classList.remove('is-loading');
-    document.querySelector('.navbar').style.opacity = 0;
-    const Birthday = module.default;
-    render(<Birthday/>, document.querySelector('#happy'));
+    document.querySelector('.navbar').style.transform = 'translateY(-72px)';
   }
 
   componentWillUnmount() {
@@ -53,10 +50,12 @@ class Countdown extends Component {
     return (
       <div className="navbar-item">
         {
-          words ? <button type="button"
-            onClick={this.toggle}
-            className="button is-light"
-          >{words}</button>
+          words ? <Link to="/summary">
+              <button type="button"
+              onClick={this.toggle}
+              className="button is-light"
+            >{words}</button>
+          </Link>
             : <div style={{ fontFamily: 'monospace' }}>
                 <span role="img" aria-label="cake">🎂</span>
                 <span>{days}</span>:

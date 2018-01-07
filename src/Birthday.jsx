@@ -1,16 +1,18 @@
-import React, { Component, Fragment } from 'react';
-import { unmountComponentAtNode } from 'react-dom';
+import React, { Component } from 'react';
 import 'bulma-pageloader/bulma-pageloader.min.css';
 import 'swiper/dist/css/swiper.min.css';
 import Swiper from 'swiper/dist/js/swiper.min';
 import SwiperContainer from './components/speceial/SwiperItem';
 import bgm from './bgm.mp3';
+import Modal from './components/Modal';
+import { withRouter } from 'react-router-dom';
+
+const M = withRouter(Modal);
 
 class Birthday extends Component {
   state = {
     pageLoading: true,
-    words: [],
-    canRemoveModal: false
+    words: []
   };
 
   fetchAudioStream = () => {
@@ -39,13 +41,11 @@ class Birthday extends Component {
       .then(src => (this.audio.src = src))
       .catch(console.log);
   };
-  toggleModal = () => {
-    if (this.state.canRemoveModal) {
-      document.querySelector('.navbar').style.opacity = 1;
-      this.mySwiper.off('scroll');
-      unmountComponentAtNode(document.querySelector('#happy'));
-    }
-  };
+
+  componentWillUnmount() {
+    this.mySwiper.off('scroll');
+    document.querySelector('.navbar').style.transform = 'translateY(0)';
+  }
 
   async componentDidMount() {
     this.fetchAudioStream();
@@ -75,27 +75,13 @@ class Birthday extends Component {
       this.setState(({ active }) => ({
         active: active.map((status, i) => (i === pos ? true : status))
       }));
-      // 用来检测是否滑动到最后一页了. 似乎 swipper 有 bug, 所以 || 的后面一分支 hack 了这个 bug
-      if (
-        document.querySelector(
-          '.swiper-slide.swiper-slide-active:last-child'
-        ) ||
-        !document.querySelector('.swiper-slide-next')
-      ) {
-        this.audio.pause();
-        document
-          .querySelector('.icon.has-text-danger')
-          .classList.remove('is-active');
-        this.setState({ canRemoveModal: true });
-      }
-      pos += 1;
     });
   }
 
   render() {
     const { pageLoading, words, active } = this.state;
     return (
-      <Fragment>
+      <M>
         <div
           className={`pageloader is-danger ${pageLoading ? 'is-active' : ''}`}
           style={{
@@ -106,14 +92,9 @@ class Birthday extends Component {
           <span className="title">精彩内容正在准备! 玩命加载中ヾ(=･ω･=)o </span>
         </div>
 
-        <div className={`modal is-active`}>
-          <div className="modal-background" onClick={this.toggleModal} />
-          <div className="modal-content">
-            <SwiperContainer words={words} active={active} />
-          </div>
-        </div>
+        <SwiperContainer words={words} active={active} />
         <audio src="" autoPlay loop ref={node => (this.audio = node)} />
-      </Fragment>
+      </M>
     );
   }
 }

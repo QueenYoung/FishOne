@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 const Profile = AsyncComponent(() => import('./components/Profile'));
 const Reason = AsyncComponent(() => import('./Reason'));
 const Introducation = AsyncComponent(() => import('./Introducation'));
+const Birthday = AsyncComponent(() => import('./Birthday'));
 
 class App extends Component {
   state = {
@@ -80,6 +81,9 @@ class App extends Component {
           <Route
             path="/profile"
             component={Profile}
+          />
+          <Route path="/summary"
+            component={Birthday}
           />
           <main style={this.pushdown(isNavbarToggle)}>
             <Switch>
