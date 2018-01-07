@@ -41,6 +41,7 @@ class Card extends Component {
       isSwiper
     } = this.props;
     const coverStyle = { objectFit: 'cover', objectPosition: '20%' };
+    console.log(thumbnail, pic);
     return (
       <div className="card">
         {pic && (
@@ -51,8 +52,8 @@ class Card extends Component {
                 ref={node => (this.img = node)}
                 src="https://bulma.io/images/placeholders/640x480.png"
                 data-src={thumbnail || pic}
-                data-origin={pic}
-                alt="邱译莹"
+                data-original={pic}
+                alt="loading…"
                 data-action="zoom"
                 style={coverStyle}
               />
